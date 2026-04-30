@@ -22,6 +22,16 @@ document.querySelector('nav .name').addEventListener('click', () => showPage('ab
 
 showPage('about');
 
+function openPhoto() {
+  document.getElementById('photo-lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePhoto() {
+  document.getElementById('photo-lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 function openModal(id) {
   const overlay = document.getElementById(id);
   overlay.classList.add('open');
@@ -42,6 +52,7 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
+    closePhoto();
     document.querySelectorAll('.modal-overlay.open').forEach(overlay => {
       closeModal(overlay.id);
     });
