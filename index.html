@@ -3,284 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shreyas Subramanian — Product Manager</title>
+  <title>Shreyas Subramanian, Product Manager</title>
   <meta name="description" content="Product Manager with a data science foundation. Building at the intersection of discovery, calm technology, and genuine user need.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #111;
-      background: #fff;
-    }
-    a { color: inherit; text-decoration: none; transition: opacity 0.15s; }
-    a:hover { opacity: 0.6; }
-
-    /* Layout */
-    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 64px 0; border-bottom: 1px solid #f0f0f0; }
-    section:last-of-type { border-bottom: none; }
-
-    /* Nav */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid #f0f0f0;
-      padding: 16px 0;
-    }
-    nav .container { display: flex; justify-content: space-between; align-items: center; }
-    nav .name { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; }
-    nav .links { display: flex; gap: 24px; font-size: 13px; color: #666; }
-    nav .links a:hover { color: #111; opacity: 1; }
-
-    /* Hero */
-    .hero { padding: 88px 0 64px; }
-    .hero h1 {
-      font-size: 38px; font-weight: 600;
-      letter-spacing: -0.5px; line-height: 1.15;
-      margin-bottom: 14px;
-    }
-    .hero .subtitle {
-      font-size: 18px; color: #555;
-      line-height: 1.6; max-width: 520px;
-      margin-bottom: 28px;
-    }
-    .hero .meta {
-      display: flex; gap: 20px; flex-wrap: wrap;
-      font-size: 13px; color: #888;
-      align-items: center;
-    }
-    .hero .meta a {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: #ccc;
-    }
-    .hero .meta a:hover { opacity: 1; text-decoration-color: #888; }
-
-    /* Section labels */
-    h2 {
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: #aaa; margin-bottom: 32px;
-    }
-
-    /* About */
-    .about-body { display: flex; flex-direction: column; gap: 14px; }
-    .about-body p { font-size: 16px; color: #333; line-height: 1.8; }
-
-    /* Case Studies */
-    .case-studies { display: flex; flex-direction: column; gap: 14px; }
-    .case-card {
-      display: block;
-      border: 1px solid #e8e8e8;
-      border-radius: 10px;
-      padding: 26px 28px;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      color: inherit;
-      cursor: pointer;
-      background: none;
-      width: 100%;
-      text-align: left;
-      font-family: inherit;
-    }
-    .case-card:hover {
-      border-color: #c8c8c8;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      opacity: 1;
-    }
-    .case-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-    .case-card p { font-size: 14px; color: #666; line-height: 1.65; margin-bottom: 16px; }
-    .case-card .arrow {
-      font-size: 12px; color: #aaa;
-      float: right; margin-top: -28px;
-    }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      font-size: 11px; font-weight: 500;
-      padding: 3px 10px; border-radius: 100px;
-      background: #f5f5f5; color: #555;
-    }
-
-    /* Experience */
-    .exp-list { display: flex; flex-direction: column; gap: 40px; }
-    .exp-item h3 { font-size: 15px; font-weight: 600; }
-    .exp-item .meta { font-size: 12px; color: #999; margin: 3px 0 14px; }
-    .exp-item .context { font-size: 13px; color: #888; margin-bottom: 12px; font-style: italic; }
-    .exp-item ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-    .exp-item li {
-      font-size: 14px; color: #444;
-      padding-left: 16px; position: relative; line-height: 1.65;
-    }
-    .exp-item li::before { content: "–"; position: absolute; left: 0; color: #ccc; }
-
-    /* Skills */
-    .skills-groups { display: flex; flex-direction: column; gap: 28px; }
-    .skills-group h3 { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #bbb; margin-bottom: 12px; }
-    .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-pill {
-      font-size: 13px; padding: 5px 13px;
-      border: 1px solid #eaeaea;
-      border-radius: 100px; color: #444;
-    }
-
-    /* Education */
-    .edu-list { display: flex; flex-direction: column; gap: 28px; }
-    .edu-item h3 { font-size: 15px; font-weight: 600; }
-    .edu-item .meta { font-size: 12px; color: #999; margin: 3px 0 6px; }
-    .edu-item p { font-size: 13px; color: #777; }
-
-    /* Awards */
-    .award-list { display: flex; flex-direction: column; gap: 28px; }
-    .award-item h3 { font-size: 15px; font-weight: 600; }
-    .award-item .meta { font-size: 12px; color: #999; margin: 3px 0 8px; }
-    .award-item p { font-size: 14px; color: #555; line-height: 1.65; }
-
-    /* Resume */
-    .resume-section p { font-size: 15px; color: #555; line-height: 1.7; max-width: 480px; margin-bottom: 20px; }
-    .resume-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 20px;
-      border: 1.5px solid #111;
-      border-radius: 7px;
-      font-size: 13px; font-weight: 500;
-      transition: background 0.15s, color 0.15s;
-    }
-    .resume-btn:hover { background: #111; color: #fff; opacity: 1; }
-
-    /* Footer */
-    footer {
-      padding: 40px 0;
-      text-align: center;
-      font-size: 12px; color: #ccc;
-    }
-
-    /* Responsive */
-    @media (max-width: 580px) {
-      .hero h1 { font-size: 28px; }
-      .hero .subtitle { font-size: 16px; }
-      section { padding: 48px 0; }
-      nav .links { gap: 16px; }
-    }
-
-    /* ── Modal ── */
-    .modal-overlay {
-      display: none;
-      position: fixed; inset: 0; z-index: 200;
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      padding: 24px 16px;
-      overflow-y: auto;
-    }
-    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
-    .modal {
-      background: #fff;
-      border-radius: 14px;
-      width: 100%; max-width: 700px;
-      margin: auto;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.18);
-      overflow: hidden;
-    }
-    .modal-header {
-      display: flex; align-items: flex-start; justify-content: space-between;
-      padding: 28px 32px 0;
-      gap: 16px;
-    }
-    .modal-header .modal-title {
-      font-size: 20px; font-weight: 600; line-height: 1.3;
-      letter-spacing: -0.3px;
-    }
-    .modal-close {
-      background: none; border: none; cursor: pointer;
-      font-size: 22px; color: #aaa; padding: 0; line-height: 1;
-      flex-shrink: 0; margin-top: 2px;
-      transition: color 0.15s;
-    }
-    .modal-close:hover { color: #111; }
-    .modal-summary {
-      padding: 12px 32px 0;
-      font-size: 14px; color: #777; line-height: 1.65;
-      font-style: italic;
-    }
-    .modal-tags {
-      display: flex; flex-wrap: wrap; gap: 6px;
-      padding: 16px 32px 0;
-    }
-    .modal-body {
-      padding: 28px 32px 0;
-      display: flex; flex-direction: column; gap: 28px;
-    }
-    .modal-section h3 {
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: #aaa; margin-bottom: 14px;
-    }
-    .modal-section p {
-      font-size: 14px; color: #333; line-height: 1.75;
-      margin-bottom: 10px;
-    }
-    .modal-section p:last-child { margin-bottom: 0; }
-    .modal-section ul {
-      list-style: none; display: flex; flex-direction: column; gap: 7px;
-      margin-top: 10px;
-    }
-    .modal-section li {
-      font-size: 14px; color: #444; line-height: 1.65;
-      padding-left: 16px; position: relative;
-    }
-    .modal-section li::before { content: "–"; position: absolute; left: 0; color: #ccc; }
-    .modal-section blockquote {
-      border-left: 3px solid #e8e8e8;
-      padding: 10px 16px;
-      margin: 14px 0 0;
-      font-size: 13px; color: #666; font-style: italic; line-height: 1.7;
-    }
-    .modal-section strong { color: #111; }
-    .modal-divider {
-      height: 1px; background: #f0f0f0; margin: 0;
-    }
-    .modal-table-wrap { overflow-x: auto; margin-top: 10px; }
-    .modal-table {
-      width: 100%; border-collapse: collapse;
-      font-size: 13px;
-    }
-    .modal-table th {
-      text-align: left; padding: 9px 12px;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      color: #aaa; border-bottom: 1px solid #e8e8e8;
-    }
-    .modal-table td {
-      padding: 10px 12px; color: #444; line-height: 1.6;
-      border-bottom: 1px solid #f5f5f5; vertical-align: top;
-    }
-    .modal-table tr:last-child td { border-bottom: none; }
-    .modal-footer {
-      display: flex; justify-content: flex-end;
-      padding: 24px 32px;
-      margin-top: 8px;
-    }
-    .modal-notion-link {
-      font-size: 13px; color: #888;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: #ccc;
-      transition: color 0.15s, text-decoration-color 0.15s;
-    }
-    .modal-notion-link:hover { color: #111; text-decoration-color: #888; opacity: 1; }
-    @media (max-width: 580px) {
-      .modal-header, .modal-summary, .modal-tags, .modal-body, .modal-footer {
-        padding-left: 20px; padding-right: 20px;
-      }
-      .modal-header .modal-title { font-size: 17px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -311,8 +38,8 @@
   <section id="about">
     <h2>About</h2>
     <div class="about-body">
-      <p>I'm a product manager with a data science foundation and a deep interest in how people experience software. I believe the best products make users feel <strong>capable, not overwhelmed</strong> — fewer distractions, clearer signals, interactions that respect human attention.</p>
-      <p>My work sits at the intersection of rigorous discovery, structured documentation, and Calm Technology thinking. I don't build features because competitors have them — I build them because users demonstrably need them.</p>
+      <p>I'm a product manager with a data science foundation and a deep interest in how people experience software. I believe the best products make users feel <strong>capable, not overwhelmed</strong>, with fewer distractions, clearer signals, and interactions that respect human attention.</p>
+      <p>My work sits at the intersection of rigorous discovery, structured documentation, and Calm Technology thinking. I don't build features because competitors have them. I build them because users demonstrably need them.</p>
       <p>I'm actively exploring PM roles where I can contribute to discovery, shape roadmap decisions, and help build things users genuinely need. If you're working on a product where getting the experience right matters as much as shipping fast, I'd love to connect.</p>
     </div>
   </section>
@@ -323,7 +50,7 @@
 
       <button class="case-card" onclick="openModal('modal-browser')">
         <h3>Browser Focus Mode Extension</h3>
-        <p>Designed a browser productivity extension for deep work — blocking distractions, enforcing session timers, and applying Calm Technology principles to reduce interruption without friction.</p>
+        <p>Designed a browser productivity extension for deep work: blocking distractions, enforcing session timers, and applying Calm Technology principles to reduce interruption without friction.</p>
         <div class="tags">
           <span class="tag">Calm Technology</span>
           <span class="tag">System Design</span>
@@ -335,7 +62,7 @@
 
       <button class="case-card" onclick="openModal('modal-notes')">
         <h3>Middle Ground: Note-Taking App</h3>
-        <p>Identified a gap between lightweight and heavy-duty note-taking tools and designed a product for users who need structure without complexity — built around user research and Jobs to Be Done.</p>
+        <p>Identified a gap between lightweight and heavy-duty note-taking tools and designed a product for users who need structure without complexity, built around user research and Jobs to Be Done.</p>
         <div class="tags">
           <span class="tag">User Research</span>
           <span class="tag">PRD Writing</span>
@@ -364,7 +91,7 @@
     <div class="exp-list">
 
       <div class="exp-item">
-        <h3>Co-Founder & Product Lead — Code Robin</h3>
+        <h3>Co-Founder & Product Lead at Code Robin</h3>
         <p class="meta">Jan 2026 – Present · Chennai, India</p>
         <p class="context">AI edtech product targeting a gap in professor-administered tooling within academic workflows.</p>
         <ul>
@@ -375,7 +102,7 @@
       </div>
 
       <div class="exp-item">
-        <h3>Technology Intern — Connyct Inc.</h3>
+        <h3>Technology Intern at Connyct Inc.</h3>
         <p class="meta">Aug 2025 – Dec 2025 · Remote</p>
         <ul>
           <li>Improved Campus AI data pipeline reliability by auditing and correcting 10,000 scraped campus records, directly improving in-app data accuracy.</li>
@@ -385,7 +112,7 @@
       </div>
 
       <div class="exp-item">
-        <h3>Student Lead — Peet's Coffee</h3>
+        <h3>Student Lead at Peet's Coffee</h3>
         <p class="meta">Sep 2023 – May 2025 · Madison, WI</p>
         <ul>
           <li>Maintained consistent café operations by supervising the student team and bridging communication with store management.</li>
@@ -433,7 +160,7 @@
       <div class="skills-group">
         <h3>Certifications</h3>
         <div class="skill-pills">
-          <span class="skill-pill">AI Product Management — Duke University</span>
+          <span class="skill-pill">AI Product Management, Duke University</span>
         </div>
       </div>
     </div>
@@ -464,7 +191,7 @@
         <p>Awarded for exceptional coordination of department activities and institutional events. Recognised as the most supportive and altruistic individual from the batch of 2019–2023.</p>
       </div>
       <div class="award-item">
-        <h3>Deputy Secretary General — SRMVMUN</h3>
+        <h3>Deputy Secretary General, SRMVMUN</h3>
         <p class="meta">SRM IST · 2019 – 2023</p>
         <p>Coordinated across finance, logistics, hospitality, and content teams for a 250+ delegate conference. Managed delegate affairs including portfolio allocation, conflict resolution, and executive board communication.</p>
       </div>
@@ -486,7 +213,7 @@
 </footer>
 
 
-<!-- ── Modal: Browser Focus Mode Extension ── -->
+<!-- Modal: Browser Focus Mode Extension -->
 <div class="modal-overlay" id="modal-browser" role="dialog" aria-modal="true" aria-labelledby="modal-browser-title">
   <div class="modal">
     <div class="modal-header">
@@ -504,12 +231,12 @@
 
       <div class="modal-section">
         <h3>The Problem</h3>
-        <p>When a user is trying to focus in a particular browser tab, the presence of other open tabs — and the ability to open new ones — creates a constant source of distraction. The average user has 17 tabs open at any given time, and productivity communities consistently identify tab-switching as a primary focus killer.</p>
+        <p>When a user is trying to focus in a particular browser tab, the presence of other open tabs, along with the ability to open new ones, creates a constant source of distraction. The average user has 17 tabs open at any given time, and productivity communities consistently identify tab-switching as a primary focus killer.</p>
         <p><strong>Discovery method:</strong> Personal experience as a proxy user, validated through five structured user interviews. Core discipline: ask about the past, never the future.</p>
         <p>Sample interview questions:</p>
         <ul>
           <li>"Tell me about an instance where you felt distracted by multiple tabs open in your browser."</li>
-          <li>"Tell me about the last time you had to do focused work — what was the setup you had in place before starting?"</li>
+          <li>"Tell me about the last time you had to do focused work. What was the setup you had in place before starting?"</li>
           <li>"Walk me through a time when, despite all measures you had in place, you still ended up getting distracted."</li>
         </ul>
       </div>
@@ -535,7 +262,7 @@
             <tbody>
               <tr><td>Cold Turkey</td><td>Block what distracts you</td><td>Most aggressive blocker; application-level whitelisting</td><td>No browser-level tab control; cannot define an intentional workspace</td></tr>
               <tr><td>Freedom</td><td>Cross-platform restriction with scheduling</td><td>Available on mobile; syncs across devices</td><td>Same subtractive model; no tab-level workspace control</td></tr>
-              <tr><td>StayFocusd</td><td>Lightweight browser-based time limits</td><td>Free Chrome extension; simple to set up</td><td>Time limits cap distraction — they don't prevent it; no workspace concept</td></tr>
+              <tr><td>StayFocusd</td><td>Lightweight browser-based time limits</td><td>Free Chrome extension; simple to set up</td><td>Time limits cap distraction but don't prevent it; no workspace concept</td></tr>
             </tbody>
           </table>
         </div>
@@ -575,12 +302,12 @@
         <div class="modal-table-wrap">
           <table class="modal-table">
             <thead>
-              <tr><th>Now — Sprint 1</th><th>Next — Sprint 2 & 3</th><th>Later — When conditions are right</th></tr>
+              <tr><th>Now: Sprint 1</th><th>Next: Sprint 2 &amp; 3</th><th>Later: When conditions are right</th></tr>
             </thead>
             <tbody>
-              <tr><td>Tab locking with interval sessions (max 90 min)</td><td>Tab border highlighting (Calm Tech Principle 5)</td><td>Motivational quotes on exit — only after user testing</td></tr>
-              <tr><td>Chained tab groups — approved workspace</td><td>Countdown before session starts (Calm Tech Principle 2)</td><td>Session completion celebration</td></tr>
-              <tr><td>15-second countdown exit mechanism</td><td>Peripheral time indicator (Calm Tech Principle 3)</td><td>Optional to-do list — only if validated</td></tr>
+              <tr><td>Tab locking with interval sessions (max 90 min)</td><td>Tab border highlighting (Calm Tech Principle 5)</td><td>Motivational quotes on exit, only after user testing</td></tr>
+              <tr><td>Chained tab groups (approved workspace)</td><td>Countdown before session starts (Calm Tech Principle 2)</td><td>Session completion celebration</td></tr>
+              <tr><td>15-second countdown exit mechanism</td><td>Peripheral time indicator (Calm Tech Principle 3)</td><td>Optional to-do list, only if validated</td></tr>
             </tbody>
           </table>
         </div>
@@ -605,7 +332,7 @@
 </div>
 
 
-<!-- ── Modal: Middle Ground Note-Taking App ── -->
+<!-- Modal: Middle Ground Note-Taking App -->
 <div class="modal-overlay" id="modal-notes" role="dialog" aria-modal="true" aria-labelledby="modal-notes-title">
   <div class="modal">
     <div class="modal-header">
@@ -623,7 +350,7 @@
 
       <div class="modal-section">
         <h3>The Problem</h3>
-        <p>The mid-20s to early 30s age group — students and working professionals — are being let down by existing note-taking apps. No app is easy enough to use immediately without configuration, yet powerful enough for both short-form capture and long-form collaboration.</p>
+        <p>The mid-20s to early 30s age group (students and working professionals) are being let down by existing note-taking apps. No app is easy enough to use immediately without configuration, yet powerful enough for both short-form capture and long-form collaboration.</p>
         <p><strong>Three sources of evidence:</strong></p>
         <ul>
           <li><strong>Personal experience:</strong> As a postgraduate student, the friction of switching between tools and Notion's setup failure were experienced directly.</li>
@@ -636,8 +363,8 @@
 
       <div class="modal-section">
         <h3>The User</h3>
-        <p><strong>User persona — James, 25:</strong> A master's student in the US. Collaborates with classmates on group projects and does his own writing. Finds Google Docs good for collaboration but poor for personal work.</p>
-        <p>Once, James spent 45 minutes customising a Notion template for his job search. He ended up so frustrated that he paid for an AI recruiter instead — because the AI was easier to set up than the template.</p>
+        <p><strong>User persona: James, 25.</strong> A master's student in the US. Collaborates with classmates on group projects and does his own writing. Finds Google Docs good for collaboration but poor for personal work.</p>
+        <p>Once, James spent 45 minutes customising a Notion template for his job search. He ended up so frustrated that he paid for an AI recruiter instead, because the AI was easier to set up than the template.</p>
         <p><strong>Jobs To Be Done:</strong> When I need to write, organise, or collaborate on something, I want a tool I can open and use immediately without configuration, so I can focus on the work itself rather than setting up the environment for the work.</p>
       </div>
 
@@ -694,12 +421,12 @@
         <div class="modal-table-wrap">
           <table class="modal-table">
             <thead>
-              <tr><th>Now — Sprint 1</th><th>Next — Sprint 2 & 3</th><th>Later — When conditions are right</th></tr>
+              <tr><th>Now: Sprint 1</th><th>Next: Sprint 2 &amp; 3</th><th>Later: When conditions are right</th></tr>
             </thead>
             <tbody>
-              <tr><td>Core writing editor (bold, italic, headings, bullets)</td><td>Templates — 2 or 3 pre-built structures</td><td>AI writing assistance — when a capable open source model is ready</td></tr>
-              <tr><td>Real-time collaboration with link sharing</td><td>How-to guide on first login</td><td>Additional integrations — user feedback only, never competitive pressure</td></tr>
-              <tr><td>Clean minimal UI — no configuration required</td><td>Opt-in weekly digest of what the user created</td><td></td></tr>
+              <tr><td>Core writing editor (bold, italic, headings, bullets)</td><td>Templates: 2 or 3 pre-built structures</td><td>AI writing assistance, when a capable open source model is ready</td></tr>
+              <tr><td>Real-time collaboration with link sharing</td><td>How-to guide on first login</td><td>Additional integrations, user feedback only, never competitive pressure</td></tr>
+              <tr><td>Clean minimal UI, no configuration required</td><td>Opt-in weekly digest of what the user created</td><td></td></tr>
             </tbody>
           </table>
         </div>
@@ -723,7 +450,7 @@
 </div>
 
 
-<!-- ── Modal: Spotify Discover Music ── -->
+<!-- Modal: Spotify Discover Music -->
 <div class="modal-overlay" id="modal-spotify" role="dialog" aria-modal="true" aria-labelledby="modal-spotify-title">
   <div class="modal">
     <div class="modal-header">
@@ -751,7 +478,7 @@
 
       <div class="modal-section">
         <h3>The User</h3>
-        <p><strong>Arjun, 24</strong> — niche listener, Spotify Premium subscriber.</p>
+        <p><strong>Arjun, 24</strong>, niche listener, Spotify Premium subscriber.</p>
         <ul>
           <li>Listens to jazz fusion, Tamil indie, ambient electronic</li>
           <li>Discovery has plateaued; Spotify keeps recommending the same 40–50 artists</li>
@@ -802,7 +529,7 @@
 
       <div class="modal-section">
         <h3>The Gap</h3>
-        <p>Behavioral data is a closed loop — you can only recommend what the user has already signaled interest in. For a mainstream listener, this loop is wide enough. For Arjun, it's exhausted in months.</p>
+        <p>Behavioral data is a closed loop: you can only recommend what the user has already signaled interest in. For a mainstream listener, this loop is wide enough. For Arjun, it's exhausted in months.</p>
         <p>Community knowledge breaks the loop. When someone on r/jazzmemes writes "if you like Hiatus Kaiyote, you need to hear Moonchild", that's a discovery signal. Spotify doesn't read it. No streaming platform does at scale.</p>
       </div>
 
@@ -817,7 +544,7 @@
           <li>"Ambient electronic for late-night focus"</li>
         </ul>
         <p style="margin-top: 12px;">Spotify parses the input, maps it to community music knowledge (Reddit, Discogs, Pitchfork, etc.), and returns a curated playlist of tracks the user has never heard.</p>
-        <p><strong>Community Intelligence Layer:</strong> A text-trained model on music community content surfaces associations that behavioral data misses — not just tags, but actual prose about what music feels like, sounds like, and what it's good for.</p>
+        <p><strong>Community Intelligence Layer:</strong> A text-trained model on music community content surfaces associations that behavioral data misses, going beyond tags to actual prose about what music feels like, sounds like, and what it's good for.</p>
         <p><strong>Intensity Filter:</strong></p>
         <div class="modal-table-wrap">
           <table class="modal-table">
@@ -886,33 +613,7 @@
 </div>
 
 
-<script>
-  function openModal(id) {
-    const overlay = document.getElementById(id);
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    overlay.querySelector('.modal-close').focus();
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.modal-overlay').forEach(overlay => {
-    overlay.addEventListener('click', e => {
-      if (e.target === overlay) closeModal(overlay.id);
-    });
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.open').forEach(overlay => {
-        closeModal(overlay.id);
-      });
-    }
-  });
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
