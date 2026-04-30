@@ -41,7 +41,9 @@
 
   <!-- Photo lightbox -->
   <div class="photo-lightbox" id="photo-lightbox" onclick="closePhoto()">
-    <img src="Shreyas - Latest PP.jpeg" alt="Shreyas Subramanian">
+    <div class="photo-lightbox-inner" onclick="event.stopPropagation()">
+      <img src="Shreyas - Latest PP.jpeg" alt="Shreyas Subramanian">
+    </div>
   </div>
 
   <!-- About -->
