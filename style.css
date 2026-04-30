@@ -40,12 +40,12 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
 
 /* Hero avatar */
 .hero-avatar {
-  width: 48px; height: 48px;
+  width: 96px; height: 96px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  border: 2px solid #e8e8e8;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+  border: 3px solid #e8e8e8;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
   flex-shrink: 0;
 }
 
