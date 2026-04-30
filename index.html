@@ -83,6 +83,11 @@
       padding: 26px 28px;
       transition: border-color 0.15s, box-shadow 0.15s;
       color: inherit;
+      cursor: pointer;
+      background: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
     }
     .case-card:hover {
       border-color: #c8c8c8;
@@ -162,6 +167,119 @@
       section { padding: 48px 0; }
       nav .links { gap: 16px; }
     }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 24px 16px;
+      overflow-y: auto;
+    }
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal {
+      background: #fff;
+      border-radius: 14px;
+      width: 100%; max-width: 700px;
+      margin: auto;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.18);
+      overflow: hidden;
+    }
+    .modal-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      padding: 28px 32px 0;
+      gap: 16px;
+    }
+    .modal-header .modal-title {
+      font-size: 20px; font-weight: 600; line-height: 1.3;
+      letter-spacing: -0.3px;
+    }
+    .modal-close {
+      background: none; border: none; cursor: pointer;
+      font-size: 22px; color: #aaa; padding: 0; line-height: 1;
+      flex-shrink: 0; margin-top: 2px;
+      transition: color 0.15s;
+    }
+    .modal-close:hover { color: #111; }
+    .modal-summary {
+      padding: 12px 32px 0;
+      font-size: 14px; color: #777; line-height: 1.65;
+      font-style: italic;
+    }
+    .modal-tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      padding: 16px 32px 0;
+    }
+    .modal-body {
+      padding: 28px 32px 0;
+      display: flex; flex-direction: column; gap: 28px;
+    }
+    .modal-section h3 {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #aaa; margin-bottom: 14px;
+    }
+    .modal-section p {
+      font-size: 14px; color: #333; line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .modal-section p:last-child { margin-bottom: 0; }
+    .modal-section ul {
+      list-style: none; display: flex; flex-direction: column; gap: 7px;
+      margin-top: 10px;
+    }
+    .modal-section li {
+      font-size: 14px; color: #444; line-height: 1.65;
+      padding-left: 16px; position: relative;
+    }
+    .modal-section li::before { content: "–"; position: absolute; left: 0; color: #ccc; }
+    .modal-section blockquote {
+      border-left: 3px solid #e8e8e8;
+      padding: 10px 16px;
+      margin: 14px 0 0;
+      font-size: 13px; color: #666; font-style: italic; line-height: 1.7;
+    }
+    .modal-section strong { color: #111; }
+    .modal-divider {
+      height: 1px; background: #f0f0f0; margin: 0;
+    }
+    .modal-table-wrap { overflow-x: auto; margin-top: 10px; }
+    .modal-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 13px;
+    }
+    .modal-table th {
+      text-align: left; padding: 9px 12px;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: #aaa; border-bottom: 1px solid #e8e8e8;
+    }
+    .modal-table td {
+      padding: 10px 12px; color: #444; line-height: 1.6;
+      border-bottom: 1px solid #f5f5f5; vertical-align: top;
+    }
+    .modal-table tr:last-child td { border-bottom: none; }
+    .modal-footer {
+      display: flex; justify-content: flex-end;
+      padding: 24px 32px;
+      margin-top: 8px;
+    }
+    .modal-notion-link {
+      font-size: 13px; color: #888;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #ccc;
+      transition: color 0.15s, text-decoration-color 0.15s;
+    }
+    .modal-notion-link:hover { color: #111; text-decoration-color: #888; opacity: 1; }
+    @media (max-width: 580px) {
+      .modal-header, .modal-summary, .modal-tags, .modal-body, .modal-footer {
+        padding-left: 20px; padding-right: 20px;
+      }
+      .modal-header .modal-title { font-size: 17px; }
+    }
   </style>
 </head>
 <body>
@@ -203,7 +321,7 @@
     <h2>Case Studies</h2>
     <div class="case-studies">
 
-      <a class="case-card" href="https://www.notion.so/34ba478ca6ea81cc8d94f0c778a23c1b" target="_blank">
+      <button class="case-card" onclick="openModal('modal-browser')">
         <h3>Browser Focus Mode Extension</h3>
         <p>Designed a browser productivity extension for deep work — blocking distractions, enforcing session timers, and applying Calm Technology principles to reduce interruption without friction.</p>
         <div class="tags">
@@ -213,9 +331,9 @@
           <span class="tag">PRD Writing</span>
         </div>
         <span class="arrow">↗</span>
-      </a>
+      </button>
 
-      <a class="case-card" href="https://www.notion.so/34ba478ca6ea814e8aa5e8590ebbd8e4" target="_blank">
+      <button class="case-card" onclick="openModal('modal-notes')">
         <h3>Middle Ground: Note-Taking App</h3>
         <p>Identified a gap between lightweight and heavy-duty note-taking tools and designed a product for users who need structure without complexity — built around user research and Jobs to Be Done.</p>
         <div class="tags">
@@ -224,9 +342,9 @@
           <span class="tag">System Design</span>
         </div>
         <span class="arrow">↗</span>
-      </a>
+      </button>
 
-      <a class="case-card" href="https://www.notion.so/350a478ca6ea81a7a459cdf28ea00144" target="_blank">
+      <button class="case-card" onclick="openModal('modal-spotify')">
         <h3>Spotify: Discover Music</h3>
         <p>A product improvement recommendation for Spotify's discovery engine, identifying that the recommendation problem is a data source problem and proposing a community music intelligence layer to surface music niche listeners have never heard but would love.</p>
         <div class="tags">
@@ -236,7 +354,7 @@
           <span class="tag">Market Strategy</span>
         </div>
         <span class="arrow">↗</span>
-      </a>
+      </button>
 
     </div>
   </section>
@@ -366,6 +484,435 @@
 <footer>
   <p>Shreyas Subramanian · Last updated April 2026</p>
 </footer>
+
+
+<!-- ── Modal: Browser Focus Mode Extension ── -->
+<div class="modal-overlay" id="modal-browser" role="dialog" aria-modal="true" aria-labelledby="modal-browser-title">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-browser-title">🔍 Browser Focus Mode Extension</div>
+      <button class="modal-close" onclick="closeModal('modal-browser')" aria-label="Close">×</button>
+    </div>
+    <p class="modal-summary">A Chrome extension that flips the focus blocker model: instead of blocking what distracts you, it defines what you need. Full product arc from discovery interviews through PRD, metrics, roadmap, and Calm Technology principles.</p>
+    <div class="modal-tags">
+      <span class="tag">Calm Technology</span>
+      <span class="tag">System Design</span>
+      <span class="tag">User Research</span>
+      <span class="tag">PRD Writing</span>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <h3>The Problem</h3>
+        <p>When a user is trying to focus in a particular browser tab, the presence of other open tabs — and the ability to open new ones — creates a constant source of distraction. The average user has 17 tabs open at any given time, and productivity communities consistently identify tab-switching as a primary focus killer.</p>
+        <p><strong>Discovery method:</strong> Personal experience as a proxy user, validated through five structured user interviews. Core discipline: ask about the past, never the future.</p>
+        <p>Sample interview questions:</p>
+        <ul>
+          <li>"Tell me about an instance where you felt distracted by multiple tabs open in your browser."</li>
+          <li>"Tell me about the last time you had to do focused work — what was the setup you had in place before starting?"</li>
+          <li>"Walk me through a time when, despite all measures you had in place, you still ended up getting distracted."</li>
+        </ul>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>The User</h3>
+        <p><strong>Primary segment:</strong> Students and knowledge workers doing self-directed deep work without a hard external deadline enforcing focus.</p>
+        <p><strong>Jobs To Be Done:</strong> When a student or knowledge worker is trying to focus on a task and is feeling distracted, they want to accomplish the task at hand successfully within a given time, so they can finish what they set out to do and feel their time was genuinely well spent.</p>
+        <p><strong>Key insight:</strong> The real job is not "block distracting websites." It is "create conditions where I can do my best work and feel the satisfaction of finishing what I started."</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>The Market</h3>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Product</th><th>Core Bet</th><th>Strength</th><th>Blind Spot</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cold Turkey</td><td>Block what distracts you</td><td>Most aggressive blocker; application-level whitelisting</td><td>No browser-level tab control; cannot define an intentional workspace</td></tr>
+              <tr><td>Freedom</td><td>Cross-platform restriction with scheduling</td><td>Available on mobile; syncs across devices</td><td>Same subtractive model; no tab-level workspace control</td></tr>
+              <tr><td>StayFocusd</td><td>Lightweight browser-based time limits</td><td>Free Chrome extension; simple to set up</td><td>Time limits cap distraction — they don't prevent it; no workspace concept</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <blockquote>Cold Turkey blocks what you don't want. This extension defines what you do want. That is the difference between building walls and building a room.</blockquote>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>The Solution (PRD)</h3>
+        <p>A Chrome extension allowing users to initiate a timed focus session capped at 90 minutes. Once a session begins, the browser enters a locked state: the user cannot switch to any tab outside a pre-defined group of approved tabs. If a user attempts to exit before the timer completes, they see a <strong>15-second countdown</strong> to confirm. The goal is pause, not punishment.</p>
+        <p><strong>Non-goals for v1:</strong> No customisable UI · No session lockout · No Pomodoro timer · No cross-device sync · Chrome only</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Success Metrics</h3>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Metric</th><th>Definition</th><th>Rationale</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>North Star</td><td>Distinct users completing 2+ focus sessions per week</td><td>Signals habit formation, not just trial</td></tr>
+              <tr><td>Guardrail</td><td>Uninstall rate after sessions</td><td>Catches long-term failure even when short-term looks healthy</td></tr>
+              <tr><td>Input (30 days)</td><td>Users completing 15+ sessions in first month</td><td>Signal the product has become routine, not novelty</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Roadmap</h3>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Now — Sprint 1</th><th>Next — Sprint 2 & 3</th><th>Later — When conditions are right</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tab locking with interval sessions (max 90 min)</td><td>Tab border highlighting (Calm Tech Principle 5)</td><td>Motivational quotes on exit — only after user testing</td></tr>
+              <tr><td>Chained tab groups — approved workspace</td><td>Countdown before session starts (Calm Tech Principle 2)</td><td>Session completion celebration</td></tr>
+              <tr><td>15-second countdown exit mechanism</td><td>Peripheral time indicator (Calm Tech Principle 3)</td><td>Optional to-do list — only if validated</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Key Trade-offs</h3>
+        <ul>
+          <li><strong>Exit friction over hard lockout:</strong> 15-second countdown trades absolute enforcement for user trust.</li>
+          <li><strong>Chrome only in v1:</strong> Covers ~65% of browser market share. A polished Chrome experience beats a mediocre multi-browser one.</li>
+          <li><strong>No customisation in v1:</strong> Personalising a focus app contradicts its core purpose (Calm Technology Principle 1).</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <a class="modal-notion-link" href="https://www.notion.so/34ba478ca6ea81cc8d94f0c778a23c1b" target="_blank">View on Notion ↗</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Modal: Middle Ground Note-Taking App ── -->
+<div class="modal-overlay" id="modal-notes" role="dialog" aria-modal="true" aria-labelledby="modal-notes-title">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-notes-title">📝 The Middle Ground Note-Taking App</div>
+      <button class="modal-close" onclick="closeModal('modal-notes')" aria-label="Close">×</button>
+    </div>
+    <p class="modal-summary">A note-taking app for the user every major product ignores: the middle user who needs more than Apple Notes but less than Notion. Competitive analysis, user persona, PRD, and the discipline of resisting feature creep.</p>
+    <div class="modal-tags">
+      <span class="tag">User Research</span>
+      <span class="tag">PRD Writing</span>
+      <span class="tag">Competitive Analysis</span>
+      <span class="tag">Market Strategy</span>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <h3>The Problem</h3>
+        <p>The mid-20s to early 30s age group — students and working professionals — are being let down by existing note-taking apps. No app is easy enough to use immediately without configuration, yet powerful enough for both short-form capture and long-form collaboration.</p>
+        <p><strong>Three sources of evidence:</strong></p>
+        <ul>
+          <li><strong>Personal experience:</strong> As a postgraduate student, the friction of switching between tools and Notion's setup failure were experienced directly.</li>
+          <li><strong>Competitive analysis:</strong> Every product either optimised for simplicity and became limiting, or optimised for power and became inaccessible.</li>
+          <li><strong>Behavioural evidence:</strong> Users routing around Google Docs for lightweight capture (using Apple Notes or WhatsApp instead) is strong evidence of a product-job mismatch.</li>
+        </ul>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>The User</h3>
+        <p><strong>User persona — James, 25:</strong> A master's student in the US. Collaborates with classmates on group projects and does his own writing. Finds Google Docs good for collaboration but poor for personal work.</p>
+        <p>Once, James spent 45 minutes customising a Notion template for his job search. He ended up so frustrated that he paid for an AI recruiter instead — because the AI was easier to set up than the template.</p>
+        <p><strong>Jobs To Be Done:</strong> When I need to write, organise, or collaborate on something, I want a tool I can open and use immediately without configuration, so I can focus on the work itself rather than setting up the environment for the work.</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>The Market</h3>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Product</th><th>Core Bet</th><th>Strength</th><th>Blind Spot</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Google Docs</td><td>Documents belong to teams</td><td>Real-time co-editing, version history</td><td>Architecturally heavy for solo use; users route around it for casual capture</td></tr>
+              <tr><td>Apple Notes</td><td>Frictionless capture above all else</td><td>Instantly accessible; no account needed</td><td>Designed for capture, not knowledge management; breaks down at scale</td></tr>
+              <tr><td>Evernote</td><td>One tool for everything</td><td>Cross-platform, powerful search</td><td>Added too many features until the core promise became diluted</td></tr>
+              <tr><td>Notion</td><td>Infinite flexibility</td><td>Database-as-document; genuinely new</td><td>Blank canvas is paralysing; users spend more time building systems than doing work</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <blockquote>If you are trying to build a product that benefits the user, this is the kind of friction you have to hold out against.</blockquote>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>The Solution</h3>
+        <p>A note-taking app enabling collaboration and long/short-form writing without configuration. Open and start writing immediately.</p>
+        <p><strong>The differentiator:</strong> Every feature must earn its place by solving a real user problem, not by responding to competitive pressure.</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Success Metrics</h3>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Metric</th><th>Definition</th><th>Rationale</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>North Star</td><td>Distinct users creating 2+ docs (200+ chars) per week OR contributing to a shared doc</td><td>Captures both solo and collaborative use</td></tr>
+              <tr><td>Guardrail</td><td>14-day inactive rate</td><td>Rising rate signals onboarding is failing to deliver the frictionless promise</td></tr>
+              <tr><td>Input (30 days)</td><td>% of new users completing first doc within 24 hours</td><td>Tells us immediately if the no-configuration promise is being delivered</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Roadmap</h3>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Now — Sprint 1</th><th>Next — Sprint 2 & 3</th><th>Later — When conditions are right</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Core writing editor (bold, italic, headings, bullets)</td><td>Templates — 2 or 3 pre-built structures</td><td>AI writing assistance — when a capable open source model is ready</td></tr>
+              <tr><td>Real-time collaboration with link sharing</td><td>How-to guide on first login</td><td>Additional integrations — user feedback only, never competitive pressure</td></tr>
+              <tr><td>Clean minimal UI — no configuration required</td><td>Opt-in weekly digest of what the user created</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Key Trade-offs</h3>
+        <ul>
+          <li><strong>Resisting competitive iteration:</strong> Not iterating in response to competitor releases. Slower feature velocity preserves the core promise long term.</li>
+          <li><strong>Real value over vanity metrics:</strong> Documents completed and collaborative contributions over daily active users or time in app.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <a class="modal-notion-link" href="https://www.notion.so/34ba478ca6ea814e8aa5e8590ebbd8e4" target="_blank">View on Notion ↗</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Modal: Spotify Discover Music ── -->
+<div class="modal-overlay" id="modal-spotify" role="dialog" aria-modal="true" aria-labelledby="modal-spotify-title">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-spotify-title">🎵 Spotify: Discover Music</div>
+      <button class="modal-close" onclick="closeModal('modal-spotify')" aria-label="Close">×</button>
+    </div>
+    <p class="modal-summary">A product improvement recommendation for Spotify's discovery engine, identifying that the recommendation problem is a data source problem and proposing a community music intelligence layer to surface music niche listeners have never heard but would love.</p>
+    <div class="modal-tags">
+      <span class="tag">Competitive Analysis</span>
+      <span class="tag">User Research</span>
+      <span class="tag">PRD Writing</span>
+      <span class="tag">Market Strategy</span>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <h3>The Strategic Bet</h3>
+        <p>Spotify's discovery problem is not an algorithm problem. It's a <strong>data source problem</strong>.</p>
+        <p>Spotify's recommendation engine is trained on behavioral data: what you play, skip, repeat, and save. It is exceptionally good at finding more of what you already know you like. But for niche listeners, behavioral data has a ceiling. Once you've listened to everything Spotify's algorithm knows you'd like, discovery plateaus.</p>
+        <p>The missing signal is <strong>community music intelligence</strong>: the kind of knowledge that lives in Reddit threads, blog posts, YouTube comments, and Discogs reviews. Text-form taste knowledge that behavioral data cannot capture.</p>
+        <p>The strategic bet: build a layer that reads that signal.</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>The User</h3>
+        <p><strong>Arjun, 24</strong> — niche listener, Spotify Premium subscriber.</p>
+        <ul>
+          <li>Listens to jazz fusion, Tamil indie, ambient electronic</li>
+          <li>Discovery has plateaued; Spotify keeps recommending the same 40–50 artists</li>
+          <li>Workarounds: YouTube rabbit holes, Brave browser searches, subreddit spelunking</li>
+          <li>Pain: the workaround works, but it's effortful and disconnected from his Spotify library</li>
+          <li>He doesn't want to leave Spotify. He wants Spotify to do what Reddit does.</li>
+        </ul>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Two Jobs to Be Done</h3>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Job</th><th>Description</th><th>Spotify's Performance</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Job 1</td><td>Serve me within my known taste</td><td>Done well</td></tr>
+              <tr><td>Job 2</td><td>Take me somewhere genuinely new</td><td>Fails structurally</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: 12px;">Job 2 is where Spotify bleeds niche users to YouTube Music and Reddit. The gap isn't effort, it's architecture. Behavioral data cannot surface what you haven't heard.</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Competitive Landscape</h3>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Platform</th><th>Discovery Mechanism</th><th>Niche Listener Performance</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Spotify</td><td>Behavioral ML (plays, skips, saves)</td><td>Plateaus quickly for niche users</td></tr>
+              <tr><td>YouTube Music</td><td>Video engagement signals + search intent</td><td>Better for rabbit holes, worse for library</td></tr>
+              <tr><td>Apple Music</td><td>Editorial curation + behavioral</td><td>Strong editorial, weak personalization depth</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: 12px;"><strong>The shared gap:</strong> All three fail niche listeners for Job 2. None of them read community text signals at scale.</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>The Gap</h3>
+        <p>Behavioral data is a closed loop — you can only recommend what the user has already signaled interest in. For a mainstream listener, this loop is wide enough. For Arjun, it's exhausted in months.</p>
+        <p>Community knowledge breaks the loop. When someone on r/jazzmemes writes "if you like Hiatus Kaiyote, you need to hear Moonchild", that's a discovery signal. Spotify doesn't read it. No streaming platform does at scale.</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Product Recommendation: Discover Music</h3>
+        <p>A new feature inside the Search tab. The user types or speaks a description of what they want to discover:</p>
+        <ul>
+          <li>"Something like Hiatus Kaiyote but more acoustic"</li>
+          <li>"Tamil indie with a lo-fi feel"</li>
+          <li>"Ambient electronic for late-night focus"</li>
+        </ul>
+        <p style="margin-top: 12px;">Spotify parses the input, maps it to community music knowledge (Reddit, Discogs, Pitchfork, etc.), and returns a curated playlist of tracks the user has never heard.</p>
+        <p><strong>Community Intelligence Layer:</strong> A text-trained model on music community content surfaces associations that behavioral data misses — not just tags, but actual prose about what music feels like, sounds like, and what it's good for.</p>
+        <p><strong>Intensity Filter:</strong></p>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Filter</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Take it easy</td><td>Adjacent to your known taste</td></tr>
+              <tr><td>Go crazy</td><td>Noticeable stretch, still coherent</td></tr>
+              <tr><td>Music from another planet</td><td>Genuinely unfamiliar territory</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: 12px;"><strong>History-Off Mode:</strong> Discovery sessions don't feed back into your main recommendation engine unless you explicitly save tracks. This preserves the integrity of your core taste profile.</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>How This Is Different from DJ</h3>
+        <div class="modal-table-wrap">
+          <table class="modal-table">
+            <thead>
+              <tr><th>Dimension</th><th>DJ Feature</th><th>Discover Music</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Input</td><td>None (passive)</td><td>Natural language (active)</td></tr>
+              <tr><td>Data source</td><td>Your behavioral history</td><td>Community music intelligence</td></tr>
+              <tr><td>Discovery depth</td><td>Bounded by your history</td><td>Breaks out of your history</td></tr>
+              <tr><td>History isolation</td><td>No</td><td>Yes (history-off mode)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: 12px;">DJ is a better shuffle. Discover Music is a new discovery primitive.</p>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Objection Defenses</h3>
+        <ul>
+          <li><strong>"Isn't this just the DJ feature?"</strong> DJ is reactive: it uses what you already know. Discover Music is proactive: it uses what the community knows. The input mechanism and data source are both different.</li>
+          <li><strong>"Won't users just switch to YouTube Music?"</strong> YouTube Music's discovery is better for rabbit holes but disconnected from library management. Discover Music keeps the discovery session inside Spotify's ecosystem, with seamless save-to-library flow.</li>
+          <li><strong>"Discovery Mode already exists for artists. How is this different?"</strong> Discovery Mode is an artist-side tool for label promotion, not a listener-side discovery tool. These are entirely different surfaces with different stakeholders.</li>
+        </ul>
+      </div>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-section">
+        <h3>Success Metrics</h3>
+        <ul>
+          <li>Discovery session starts per week (niche listener cohort)</li>
+          <li>New artist saves per session (tracks saved from Discover Music that weren't in library before)</li>
+          <li>7-day retention on discovered tracks</li>
+          <li>Churn rate delta for niche listeners vs. control group</li>
+          <li>NPS delta among Spotify Premium niche listener segment</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <a class="modal-notion-link" href="https://www.notion.so/350a478ca6ea81a7a459cdf28ea00144" target="_blank">View on Notion ↗</a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function openModal(id) {
+    const overlay = document.getElementById(id);
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    overlay.querySelector('.modal-close').focus();
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) closeModal(overlay.id);
+    });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(overlay => {
+        closeModal(overlay.id);
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
