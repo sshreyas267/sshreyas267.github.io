@@ -51,7 +51,7 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
 
 /* Hero avatar */
 .hero-avatar {
-  width: 180px; height: 180px;
+  width: 200px; height: 200px;
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 12%;
@@ -78,7 +78,7 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
 }
 .photo-lightbox.open { display: flex; }
 .photo-lightbox-inner {
-  width: 480px; height: 480px;
+  width: 600px; height: 600px;
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid #fff;
