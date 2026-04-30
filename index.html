@@ -15,10 +15,10 @@
   <div class="container">
     <span class="name">Shreyas Subramanian</span>
     <div class="links">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#resume">Resume</a>
+      <a href="#about" data-page="about">About</a>
+      <a href="#work" data-page="work">Work</a>
+      <a href="#experience" data-page="experience">Experience</a>
+      <a href="#resume" data-page="resume">Resume</a>
     </div>
   </div>
 </nav>
@@ -26,7 +26,8 @@
 <div class="container">
 
   <section class="hero">
-    <h1>Product Manager</h1>
+    <div class="hero-eyebrow">Product Manager</div>
+    <h1>Shreyas Subramanian</h1>
     <p class="subtitle">Building at the intersection of discovery, calm technology, and genuine user need.</p>
     <div class="meta">
       <span>📍 Chennai, India</span>
@@ -35,176 +36,188 @@
     </div>
   </section>
 
-  <section id="about">
-    <h2>About</h2>
-    <div class="about-body">
-      <p>I'm a product manager with a data science foundation and a deep interest in how people experience software. I believe the best products make users feel <strong>capable, not overwhelmed</strong>, with fewer distractions, clearer signals, and interactions that respect human attention.</p>
-      <p>My work sits at the intersection of rigorous discovery, structured documentation, and Calm Technology thinking. I don't build features because competitors have them. I build them because users demonstrably need them.</p>
-      <p>I'm actively exploring PM roles where I can contribute to discovery, shape roadmap decisions, and help build things users genuinely need. If you're working on a product where getting the experience right matters as much as shipping fast, I'd love to connect.</p>
-    </div>
-  </section>
-
-  <section id="work">
-    <h2>Case Studies</h2>
-    <div class="case-studies">
-
-      <button class="case-card" onclick="openModal('modal-browser')">
-        <h3>Browser Focus Mode Extension</h3>
-        <p>Designed a browser productivity extension for deep work: blocking distractions, enforcing session timers, and applying Calm Technology principles to reduce interruption without friction.</p>
-        <div class="tags">
-          <span class="tag">Calm Technology</span>
-          <span class="tag">System Design</span>
-          <span class="tag">User Research</span>
-          <span class="tag">PRD Writing</span>
-        </div>
-        <span class="arrow">↗</span>
-      </button>
-
-      <button class="case-card" onclick="openModal('modal-notes')">
-        <h3>Middle Ground: Note-Taking App</h3>
-        <p>Identified a gap between lightweight and heavy-duty note-taking tools and designed a product for users who need structure without complexity, built around user research and Jobs to Be Done.</p>
-        <div class="tags">
-          <span class="tag">User Research</span>
-          <span class="tag">PRD Writing</span>
-          <span class="tag">System Design</span>
-        </div>
-        <span class="arrow">↗</span>
-      </button>
-
-      <button class="case-card" onclick="openModal('modal-spotify')">
-        <h3>Spotify: Discover Music</h3>
-        <p>A product improvement recommendation for Spotify's discovery engine, identifying that the recommendation problem is a data source problem and proposing a community music intelligence layer to surface music niche listeners have never heard but would love.</p>
-        <div class="tags">
-          <span class="tag">Competitive Analysis</span>
-          <span class="tag">User Research</span>
-          <span class="tag">PRD Writing</span>
-          <span class="tag">Market Strategy</span>
-        </div>
-        <span class="arrow">↗</span>
-      </button>
-
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="exp-list">
-
-      <div class="exp-item">
-        <h3>Co-Founder & Product Lead at Code Robin</h3>
-        <p class="meta">Jan 2026 – Present · Chennai, India</p>
-        <p class="context">AI edtech product targeting a gap in professor-administered tooling within academic workflows.</p>
-        <ul>
-          <li>Identified a positioning gap through structured competitive analysis of AI learning platforms, finding no existing tools designed for professor-led deployment inside academic LMS environments.</li>
-          <li>Surfaced a Canvas LMS integration requirement and secured a faculty commitment to pilot the product in a live class through structured discovery interviews with university professors.</li>
-          <li>Translated discovery findings into PRDs and a pitch deck for external stakeholders; maintained all documentation across Jira and Confluence.</li>
-        </ul>
+  <!-- About -->
+  <div class="page-section" id="section-about">
+    <section id="about">
+      <h2>About</h2>
+      <div class="about-body">
+        <p>I'm a product manager with a data science foundation and a deep interest in how people experience software. I believe the best products make users feel <strong>capable, not overwhelmed</strong>, with fewer distractions, clearer signals, and interactions that respect human attention.</p>
+        <p>My work sits at the intersection of rigorous discovery, structured documentation, and Calm Technology thinking. I don't build features because competitors have them. I build them because users demonstrably need them.</p>
+        <p>I'm actively exploring PM roles where I can contribute to discovery, shape roadmap decisions, and help build things users genuinely need. If you're working on a product where getting the experience right matters as much as shipping fast, I'd love to connect.</p>
       </div>
+    </section>
 
-      <div class="exp-item">
-        <h3>Technology Intern at Connyct Inc.</h3>
-        <p class="meta">Aug 2025 – Dec 2025 · Remote</p>
-        <ul>
-          <li>Improved Campus AI data pipeline reliability by auditing and correcting 10,000 scraped campus records, directly improving in-app data accuracy.</li>
-          <li>Uncovered 200 data discrepancies beyond initial task scope through systematic manual record auditing.</li>
-          <li>Reduced manual correction effort by 80% by building an automated validation framework; adopted by fellow interns and endorsed by the founder.</li>
-        </ul>
-      </div>
-
-      <div class="exp-item">
-        <h3>Student Lead at Peet's Coffee</h3>
-        <p class="meta">Sep 2023 – May 2025 · Madison, WI</p>
-        <ul>
-          <li>Maintained consistent café operations by supervising the student team and bridging communication with store management.</li>
-          <li>Supported management retention decisions and reduced onboarding drop-off as one of 10 North Star Initiative supervisors.</li>
-          <li>Raised event data accuracy from 75% to 95% by resolving manual entry errors and building a staffing demand model.</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="skills-groups">
-      <div class="skills-group">
-        <h3>Product Management</h3>
-        <div class="skill-pills">
-          <span class="skill-pill">Product Discovery</span>
-          <span class="skill-pill">Roadmap Prioritization</span>
-          <span class="skill-pill">PRD Writing</span>
-          <span class="skill-pill">User Story Mapping</span>
-          <span class="skill-pill">Stakeholder Alignment</span>
-          <span class="skill-pill">Competitive Analysis</span>
-          <span class="skill-pill">Calm Technology Design</span>
-          <span class="skill-pill">Agile / Sprint Planning</span>
-          <span class="skill-pill">Cross-functional Leadership</span>
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-groups">
+        <div class="skills-group">
+          <h3>Product Management</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Product Discovery</span>
+            <span class="skill-pill">Roadmap Prioritization</span>
+            <span class="skill-pill">PRD Writing</span>
+            <span class="skill-pill">User Story Mapping</span>
+            <span class="skill-pill">Stakeholder Alignment</span>
+            <span class="skill-pill">Competitive Analysis</span>
+            <span class="skill-pill">Calm Technology Design</span>
+            <span class="skill-pill">Agile / Sprint Planning</span>
+            <span class="skill-pill">Cross-functional Leadership</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>Technical</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">R</span>
+            <span class="skill-pill">Excel</span>
+            <span class="skill-pill">Power BI</span>
+            <span class="skill-pill">Tableau</span>
+            <span class="skill-pill">REST APIs</span>
+            <span class="skill-pill">System Design</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">Jira</span>
+            <span class="skill-pill">Confluence</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>Certifications</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">AI Product Management, Duke University</span>
+          </div>
         </div>
       </div>
-      <div class="skills-group">
-        <h3>Technical</h3>
-        <div class="skill-pills">
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">SQL</span>
-          <span class="skill-pill">R</span>
-          <span class="skill-pill">Excel</span>
-          <span class="skill-pill">Power BI</span>
-          <span class="skill-pill">Tableau</span>
-          <span class="skill-pill">REST APIs</span>
-          <span class="skill-pill">System Design</span>
-          <span class="skill-pill">Git</span>
-          <span class="skill-pill">Jira</span>
-          <span class="skill-pill">Confluence</span>
+    </section>
+  </div>
+
+  <!-- Work -->
+  <div class="page-section" id="section-work">
+    <section id="work">
+      <h2>Case Studies</h2>
+      <div class="case-studies">
+
+        <button class="case-card" onclick="openModal('modal-browser')">
+          <h3>Browser Focus Mode Extension</h3>
+          <p>Designed a browser productivity extension for deep work: blocking distractions, enforcing session timers, and applying Calm Technology principles to reduce interruption without friction.</p>
+          <div class="tags">
+            <span class="tag">Calm Technology</span>
+            <span class="tag">System Design</span>
+            <span class="tag">User Research</span>
+            <span class="tag">PRD Writing</span>
+          </div>
+          <span class="arrow">↗</span>
+        </button>
+
+        <button class="case-card" onclick="openModal('modal-notes')">
+          <h3>Middle Ground: Note-Taking App</h3>
+          <p>Identified a gap between lightweight and heavy-duty note-taking tools and designed a product for users who need structure without complexity, built around user research and Jobs to Be Done.</p>
+          <div class="tags">
+            <span class="tag">User Research</span>
+            <span class="tag">PRD Writing</span>
+            <span class="tag">System Design</span>
+          </div>
+          <span class="arrow">↗</span>
+        </button>
+
+        <button class="case-card" onclick="openModal('modal-spotify')">
+          <h3>Spotify: Discover Music</h3>
+          <p>A product improvement recommendation for Spotify's discovery engine, identifying that the recommendation problem is a data source problem and proposing a community music intelligence layer to surface music niche listeners have never heard but would love.</p>
+          <div class="tags">
+            <span class="tag">Competitive Analysis</span>
+            <span class="tag">User Research</span>
+            <span class="tag">PRD Writing</span>
+            <span class="tag">Market Strategy</span>
+          </div>
+          <span class="arrow">↗</span>
+        </button>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Experience -->
+  <div class="page-section" id="section-experience">
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <h3>Co-Founder & Product Lead at Code Robin</h3>
+          <p class="meta">Jan 2026 – Present · Chennai, India</p>
+          <p class="context">AI edtech product targeting a gap in professor-administered tooling within academic workflows.</p>
+          <ul>
+            <li>Identified a positioning gap through structured competitive analysis of AI learning platforms, finding no existing tools designed for professor-led deployment inside academic LMS environments.</li>
+            <li>Surfaced a Canvas LMS integration requirement and secured a faculty commitment to pilot the product in a live class through structured discovery interviews with university professors.</li>
+            <li>Translated discovery findings into PRDs and a pitch deck for external stakeholders; maintained all documentation across Jira and Confluence.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <h3>Technology Intern at Connyct Inc.</h3>
+          <p class="meta">Aug 2025 – Dec 2025 · Remote</p>
+          <ul>
+            <li>Improved Campus AI data pipeline reliability by auditing and correcting 10,000 scraped campus records, directly improving in-app data accuracy.</li>
+            <li>Uncovered 200 data discrepancies beyond initial task scope through systematic manual record auditing.</li>
+            <li>Reduced manual correction effort by 80% by building an automated validation framework; adopted by fellow interns and endorsed by the founder.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <h3>Student Lead at Peet's Coffee</h3>
+          <p class="meta">Sep 2023 – May 2025 · Madison, WI</p>
+          <ul>
+            <li>Maintained consistent café operations by supervising the student team and bridging communication with store management.</li>
+            <li>Supported management retention decisions and reduced onboarding drop-off as one of 10 North Star Initiative supervisors.</li>
+            <li>Raised event data accuracy from 75% to 95% by resolving manual entry errors and building a staffing demand model.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu-list">
+        <div class="edu-item">
+          <h3>MS in Data Science</h3>
+          <p class="meta">University of Wisconsin-Madison · Sep 2023 – May 2025</p>
+          <p>Big Data Systems · Statistical Modeling · Statistical Methods</p>
+        </div>
+        <div class="edu-item">
+          <h3>B.Tech in Computer Science</h3>
+          <p class="meta">SRM Institute of Science and Technology · Jul 2019 – May 2023</p>
+          <p>Data Visualization · Database Management Systems · Management Information Systems</p>
         </div>
       </div>
-      <div class="skills-group">
-        <h3>Certifications</h3>
-        <div class="skill-pills">
-          <span class="skill-pill">AI Product Management, Duke University</span>
+    </section>
+
+    <section>
+      <h2>Awards & Leadership</h2>
+      <div class="award-list">
+        <div class="award-item">
+          <h3>Outstanding Contribution Award</h3>
+          <p class="meta">SRM Institute of Science and Technology · 2023</p>
+          <p>Awarded for exceptional coordination of department activities and institutional events. Recognised as the most supportive and altruistic individual from the batch of 2019–2023.</p>
+        </div>
+        <div class="award-item">
+          <h3>Deputy Secretary General, SRMVMUN</h3>
+          <p class="meta">SRM IST · 2019 – 2023</p>
+          <p>Coordinated across finance, logistics, hospitality, and content teams for a 250+ delegate conference. Managed delegate affairs including portfolio allocation, conflict resolution, and executive board communication.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <section>
-    <h2>Education</h2>
-    <div class="edu-list">
-      <div class="edu-item">
-        <h3>MS in Data Science</h3>
-        <p class="meta">University of Wisconsin-Madison · Sep 2023 – May 2025</p>
-        <p>Big Data Systems · Statistical Modeling · Statistical Methods</p>
-      </div>
-      <div class="edu-item">
-        <h3>B.Tech in Computer Science</h3>
-        <p class="meta">SRM Institute of Science and Technology · Jul 2019 – May 2023</p>
-        <p>Data Visualization · Database Management Systems · Management Information Systems</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Awards & Leadership</h2>
-    <div class="award-list">
-      <div class="award-item">
-        <h3>Outstanding Contribution Award</h3>
-        <p class="meta">SRM Institute of Science and Technology · 2023</p>
-        <p>Awarded for exceptional coordination of department activities and institutional events. Recognised as the most supportive and altruistic individual from the batch of 2019–2023.</p>
-      </div>
-      <div class="award-item">
-        <h3>Deputy Secretary General, SRMVMUN</h3>
-        <p class="meta">SRM IST · 2019 – 2023</p>
-        <p>Coordinated across finance, logistics, hospitality, and content teams for a 250+ delegate conference. Managed delegate affairs including portfolio allocation, conflict resolution, and executive board communication.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="resume" class="resume-section">
-    <h2>Resume</h2>
-    <p>If you're working on a product where getting the experience right matters as much as shipping fast, I'd love to connect.</p>
-    <a class="resume-btn" href="https://drive.google.com/file/d/153jGCOxLFvruRgrqV85TKHONqTQ6kAms/view?usp=sharing" target="_blank">
-      View Resume ↗
-    </a>
-  </section>
+  <!-- Resume -->
+  <div class="page-section" id="section-resume">
+    <section id="resume" class="resume-section">
+      <h2>Resume</h2>
+      <p>If you're working on a product where getting the experience right matters as much as shipping fast, I'd love to connect.</p>
+      <a class="resume-btn" href="https://drive.google.com/file/d/153jGCOxLFvruRgrqV85TKHONqTQ6kAms/view?usp=sharing" target="_blank">
+        View Resume ↗
+      </a>
+    </section>
+  </div>
 
 </div>
 

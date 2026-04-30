@@ -1,3 +1,27 @@
+function showPage(name) {
+  document.querySelectorAll('.page-section').forEach(s => {
+    s.classList.remove('active', 'page-section-fade');
+  });
+  const target = document.getElementById('section-' + name);
+  if (target) {
+    target.classList.add('active', 'page-section-fade');
+  }
+  document.querySelectorAll('nav .links a').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === name);
+  });
+}
+
+document.querySelectorAll('nav .links a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    showPage(a.dataset.page);
+  });
+});
+
+document.querySelector('nav .name').addEventListener('click', () => showPage('about'));
+
+showPage('about');
+
 function openModal(id) {
   const overlay = document.getElementById(id);
   overlay.classList.add('open');
