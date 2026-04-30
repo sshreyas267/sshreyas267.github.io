@@ -54,7 +54,7 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
   width: 180px; height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center top;
+  object-position: 50% 12%;
   border: 3px solid #e8e8e8;
   box-shadow: 0 2px 16px rgba(0,0,0,0.10);
   flex-shrink: 0;
@@ -78,7 +78,7 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
 }
 .photo-lightbox.open { display: flex; }
 .photo-lightbox-inner {
-  width: 320px; height: 320px;
+  width: 480px; height: 480px;
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid #fff;
