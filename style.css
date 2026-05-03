@@ -206,11 +206,13 @@ h2 {
 }
 .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-pill {
+  display: inline-flex; align-items: center; gap: 6px;
   font-size: 13px; padding: 5px 13px;
   border: 1px solid #e2e8f0;
   border-radius: 100px; color: #475569;
   background: #f8fafc;
 }
+.skill-pill i { font-size: 12px; line-height: 1; }
 
 /* Education */
 .edu-list { display: flex; flex-direction: column; gap: 28px; }
