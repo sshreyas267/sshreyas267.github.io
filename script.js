@@ -22,6 +22,10 @@ document.querySelector('nav .name').addEventListener('click', () => showPage('ab
 
 showPage('about');
 
+function toggleCard(card) {
+  card.classList.toggle('open');
+}
+
 function openPhoto() {
   document.getElementById('photo-lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
