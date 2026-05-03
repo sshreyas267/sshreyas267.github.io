@@ -22,6 +22,9 @@ document.querySelector('nav .name').addEventListener('click', () => showPage('ab
 
 showPage('about');
 
+const d = new Date();
+document.getElementById('footer-date').textContent = d.toLocaleString('default', { month: 'long' }) + ' ' + d.getFullYear();
+
 function toggleCard(card) {
   card.classList.toggle('open');
 }
