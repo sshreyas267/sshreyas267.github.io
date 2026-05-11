@@ -181,14 +181,14 @@
 
           <button class="case-card" onclick="openModal('modal-spotify')">
             <h3>Spotify: Discover Music</h3>
-            <p>A product improvement recommendation for Spotify's discovery engine, identifying that the recommendation
-              problem is a data source problem and proposing a community music intelligence layer to surface music niche
-              listeners have never heard but would love.</p>
+            <p>A strategic recommendation to solve genuine music discovery for the niche listener segment using a two-layer data architecture: behavioral history plus a community music intelligence layer trained on genre-specific listener communities.</p>
             <div class="tags">
               <span class="tag">Competitive Analysis</span>
               <span class="tag">User Research</span>
               <span class="tag">PRD Writing</span>
               <span class="tag">Market Strategy</span>
+              <span class="tag">Business Case</span>
+              <span class="tag">Go-to-Market</span>
             </div>
             <span class="arrow">↗</span>
           </button>
@@ -799,73 +799,46 @@
         <div class="modal-title" id="modal-spotify-title">🎵 Spotify: Discover Music</div>
         <button class="modal-close" onclick="closeModal('modal-spotify')" aria-label="Close">×</button>
       </div>
-      <p class="modal-summary">A product improvement recommendation for Spotify's discovery engine, identifying that the
-        recommendation problem is a data source problem and proposing a community music intelligence layer to surface
-        music niche listeners have never heard but would love.</p>
+      <p class="modal-summary">A strategic recommendation to solve genuine music discovery for the niche listener segment. Spotify's existing infrastructure creates a structural ceiling: the more specific a user's taste, the less useful features become over time. Discover Music proposes a natural language discovery mode powered by a two-layer data architecture including a community music intelligence layer.</p>
       <div class="modal-tags">
         <span class="tag">Competitive Analysis</span>
         <span class="tag">User Research</span>
         <span class="tag">PRD Writing</span>
         <span class="tag">Market Strategy</span>
+        <span class="tag">Business Case</span>
+        <span class="tag">Go-to-Market</span>
       </div>
       <div class="modal-body">
 
         <div class="modal-section">
-          <h3>The Strategic Bet</h3>
-          <p>Spotify's discovery problem is not an algorithm problem. It's a <strong>data source problem</strong>.</p>
-          <p>Spotify's recommendation engine is trained on behavioral data: what you play, skip, repeat, and save. It is
-            exceptionally good at finding more of what you already know you like. But for niche listeners, behavioral
-            data has a ceiling. Once you've listened to everything Spotify's algorithm knows you'd like, discovery
-            plateaus.</p>
-          <p>The missing signal is <strong>community music intelligence</strong>: the kind of knowledge that lives in
-            Reddit threads, blog posts, YouTube comments, and Discogs reviews. Text-form taste knowledge that behavioral
-            data cannot capture.</p>
-          <p>The strategic bet: build a layer that reads that signal.</p>
+          <h3>The Problem</h3>
+          <p>Spotify's recommendation engine is not broken. It is working exactly as designed. The algorithm is a feedback loop that prioritizes songs with more global consumption data, structurally favoring popular content and marginalizing niche artists. The algorithm shifted further toward familiarity in 2025 — Autoplay, the AI DJ, and Song Radio now recycle tracks users already know.</p>
+          <blockquote>Only 27% of users agree that streaming services help them discover music outside familiar territory. 42% actively disagree. That gap represents hundreds of millions of users whose primary discovery need is unmet by everything Spotify currently offers, many of them premium subscribers.</blockquote>
+          <p>Spotify attempted niche discovery through Discovery Mode, but that works for mid-tier artists trying to break through — not for artists whose ceiling is genuinely small. <strong>The structural problem is data architecture.</strong> Every existing feature begins from listening history and finds something adjacent. Discover Music removes that ceiling entirely.</p>
         </div>
 
         <div class="modal-divider"></div>
 
         <div class="modal-section">
           <h3>The User</h3>
-          <p><strong>Arjun, 24</strong>, niche listener, Spotify Premium subscriber.</p>
-          <ul>
-            <li>Listens to jazz fusion, Tamil indie, ambient electronic</li>
-            <li>Discovery has plateaued; Spotify keeps recommending the same 40–50 artists</li>
-            <li>Workarounds: YouTube rabbit holes, Brave browser searches, subreddit spelunking</li>
-            <li>Pain: the workaround works, but it's effortful and disconnected from his Spotify library</li>
-            <li>He doesn't want to leave Spotify. He wants Spotify to do what Reddit does.</li>
-          </ul>
-        </div>
-
-        <div class="modal-divider"></div>
-
-        <div class="modal-section">
-          <h3>Two Jobs to Be Done</h3>
+          <p><strong>Primary persona:</strong> 25 to 35-year-old with eclectic cross-genre taste. Listens seriously. Pays for premium.</p>
           <div class="modal-table-wrap">
             <table class="modal-table">
-              <thead>
-                <tr>
-                  <th>Job</th>
-                  <th>Description</th>
-                  <th>Spotify's Performance</th>
-                </tr>
-              </thead>
+              <thead><tr><th>Dimension</th><th>Detail</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>Job 1</td>
-                  <td>Serve me within my known taste</td>
-                  <td>Done well</td>
-                </tr>
-                <tr>
-                  <td>Job 2</td>
-                  <td>Take me somewhere genuinely new</td>
-                  <td>Fails structurally</td>
-                </tr>
+                <tr><td>Current behavior</td><td>Uses Smart Shuffle and Discover Weekly. After a few days, recommendations become cyclic. Retreats to familiar songs when discovery stops working.</td></tr>
+                <tr><td>Discovery loop</td><td>When Spotify fails them, they find music outside the app through social media, friend recommendations, or YouTube. The app is where they store music after discovery has happened elsewhere.</td></tr>
+                <tr><td>Core frustration</td><td>Installed a music app to expand their musical world. Using it as a jukebox for songs they already know.</td></tr>
+                <tr><td>Switching cost</td><td>Years of behavioral history trained Spotify's algorithm to their specific taste. That history does not transfer to any competing platform — arriving at YouTube Music means starting cold.</td></tr>
               </tbody>
             </table>
           </div>
-          <p style="margin-top: 12px;">Job 2 is where Spotify bleeds niche users to YouTube Music and Reddit. The gap
-            isn't effort, it's architecture. Behavioral data cannot surface what you haven't heard.</p>
+          <p style="margin-top: 12px;"><strong>The Two Jobs:</strong></p>
+          <ul>
+            <li><strong>Job 1 (Spotify does well):</strong> Serve me well within what I already know and love. High switching cost keeps users embedded despite discovery frustrations.</li>
+            <li><strong>Job 2 (Spotify fails structurally):</strong> Take me somewhere I have never been but know I would love. This job cannot be completed with behavioral data alone — it requires a different data source.</li>
+          </ul>
+          <blockquote>Spotify knows what a user has heard. It cannot know what a user has not yet heard but would love. That gap cannot be closed by a better algorithm trained on the same data.</blockquote>
         </div>
 
         <div class="modal-divider"></div>
@@ -875,166 +848,110 @@
           <div class="modal-table-wrap">
             <table class="modal-table">
               <thead>
-                <tr>
-                  <th>Platform</th>
-                  <th>Discovery Mechanism</th>
-                  <th>Niche Listener Performance</th>
-                </tr>
+                <tr><th>Platform</th><th>Strength</th><th>Failure for the niche listener</th></tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Spotify</td>
-                  <td>Behavioral ML (plays, skips, saves)</td>
-                  <td>Plateaus quickly for niche users</td>
-                </tr>
-                <tr>
-                  <td>YouTube Music</td>
-                  <td>Video engagement signals + search intent</td>
-                  <td>Better for rabbit holes, worse for library</td>
+                  <td>761M MAUs, unmatched behavioral data depth, strongest algorithmic discovery infrastructure, 100M+ track catalog.</td>
+                  <td>Recommendation engine anchored to listening history. Structurally biased toward popular content. Niche listeners hit a cyclic recommendation ceiling regardless of time on platform.</td>
                 </tr>
                 <tr>
                   <td>Apple Music</td>
-                  <td>Editorial curation + behavioral</td>
-                  <td>Strong editorial, weak personalization depth</td>
+                  <td>Spatial Audio and lossless quality at no extra cost. Over 100 human editors globally curating genre-specific playlists — the deepest editorial curation in the market.</td>
+                  <td>Apple-only, excluding all Android users. Editorial curation is passive: the user cannot tell Apple Music what they are looking for. No intent-based discovery mechanism exists.</td>
+                </tr>
+                <tr>
+                  <td>YouTube Music</td>
+                  <td>Broader content including live sessions, covers, and unofficial recordings. Leverages over a decade of YouTube watch history as behavioral signal.</td>
+                  <td>Switching means losing years of algorithm training no migration tool can transfer. Discovery designed for clear genre preferences, not cross-genre listeners.</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p style="margin-top: 12px;"><strong>The shared gap:</strong> All three fail niche listeners for Job 2. None
-            of them read community text signals at scale.</p>
+          <p style="margin-top: 12px;">Every existing discovery feature begins from what a user already listens to or relies on passive editorial decisions. None have built a mechanism where the user states their intent and the product steps entirely outside their history to fulfill it. That is the gap Discover Music fills.</p>
         </div>
 
         <div class="modal-divider"></div>
 
         <div class="modal-section">
-          <h3>The Gap</h3>
-          <p>Behavioral data is a closed loop: you can only recommend what the user has already signaled interest in.
-            For a mainstream listener, this loop is wide enough. For Arjun, it's exhausted in months.</p>
-          <p>Community knowledge breaks the loop. When someone on r/jazzmemes writes "if you like Hiatus Kaiyote, you
-            need to hear Moonchild", that's a discovery signal. Spotify doesn't read it. No streaming platform does at
-            scale.</p>
-        </div>
-
-        <div class="modal-divider"></div>
-
-        <div class="modal-section">
-          <h3>Product Recommendation: Discover Music</h3>
-          <p>A new feature inside the Search tab. The user types or speaks a description of what they want to discover:
-          </p>
+          <h3>The Product Recommendation</h3>
+          <p>A new tile on the Spotify home screen called <strong>Discover Music</strong>. When tapped, users enter a dedicated discovery session where they describe the kind of music they want in their own words. Spotify generates a playlist drawing from the full catalogue — not just listening history — and presents it with a visual map showing how familiar or unfamiliar each track is.</p>
+          <p><strong>Three differentiators from the AI DJ:</strong></p>
           <ul>
-            <li>"Something like Hiatus Kaiyote but more acoustic"</li>
-            <li>"Tamil indie with a lo-fi feel"</li>
-            <li>"Ambient electronic for late-night focus"</li>
+            <li><strong>Text input over conversational persona:</strong> The DJ accepts voice commands through a persona. Discover Music accepts written descriptions, anchoring output to specific user intent rather than a DJ's interpretation.</li>
+            <li><strong>Full track playback:</strong> The DJ plays partial tracks for background listening. Discover Music plays every track completely, serving the job of finding music to save and return to.</li>
+            <li><strong>Intensity filter with a history-off mode:</strong> Take it easy (70% familiar, 30% new), Go crazy (30% familiar, 70% new), and Music from another planet (listening history ignored entirely). The DJ cannot offer a history-off mode by design.</li>
           </ul>
-          <p style="margin-top: 12px;">Spotify parses the input, maps it to community music knowledge (Reddit, Discogs,
-            Pitchfork, etc.), and returns a curated playlist of tracks the user has never heard.</p>
-          <p><strong>Community Intelligence Layer:</strong> A text-trained model on music community content surfaces
-            associations that behavioral data misses, going beyond tags to actual prose about what music feels like,
-            sounds like, and what it's good for.</p>
-          <p><strong>Intensity Filter:</strong></p>
+          <p style="margin-top: 12px;"><strong>The Community Intelligence Layer:</strong> Current Spotify infrastructure matches descriptions against acoustic similarity and catalogue metadata. Discover Music adds a community intelligence layer built from genre-specific listener discussion communities seeded and moderated by Spotify directly. Passionate listeners make connections between artists, sounds, moods, and eras that no acoustic algorithm can replicate. NLP extracts that knowledge and uses it as a recommendation signal.</p>
+          <blockquote>10 launch communities seeded 2–3 months before release: Hip-Hop, Pop, Rock, Electronic/EDM, Latin, R&amp;B/Soul, K-Pop, Afrobeats, Country, and Indie/Alternative. Minimum 500 posts per genre community before launch. Below this threshold the feature defaults to catalogue metadata.</blockquote>
+        </div>
+
+        <div class="modal-divider"></div>
+
+        <div class="modal-section">
+          <h3>Business Case</h3>
+          <p>Discovery is already Spotify's strongest retention lever. AI-powered features drive 40% higher retention rates and 140 minutes of daily listening versus 99 minutes for non-AI users. Personalized playlists contribute to 46% of premium conversions.</p>
+          <p>The 42% of users who feel discovery features are not serving them are not being poorly served by a feature that could be tuned. They are being structurally excluded by an architecture that cannot serve them without a different data source — and they are not generating return on Spotify's existing discovery investment.</p>
+          <blockquote>At 293 million premium subscribers paying approximately $11 per month, a 1% improvement in premium retention represents over $38 million in annualised revenue. Discover Music targets users showing playlist fatigue signals — the cohort at highest churn risk — making it a direct revenue protection play.</blockquote>
+        </div>
+
+        <div class="modal-divider"></div>
+
+        <div class="modal-section">
+          <h3>Go-to-Market Strategy</h3>
           <div class="modal-table-wrap">
             <table class="modal-table">
-              <thead>
-                <tr>
-                  <th>Filter</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
+              <thead><tr><th>Phase</th><th>Cohort</th><th>Goal</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>Take it easy</td>
-                  <td>Adjacent to your known taste</td>
-                </tr>
-                <tr>
-                  <td>Go crazy</td>
-                  <td>Noticeable stretch, still coherent</td>
-                </tr>
-                <tr>
-                  <td>Music from another planet</td>
-                  <td>Genuinely unfamiliar territory</td>
-                </tr>
+                <tr><td>Phase 1 (0–30 days)</td><td>Playlist fatigue users — premium subscribers who have not added new music in 30+ days</td><td>Quality validation in hardest conditions. If it re-engages this cohort, the retention story is direct and commercially significant.</td></tr>
+                <tr><td>Phase 2 (30–90 days)</td><td>Power users — premium subscribers with high Discover Weekly engagement</td><td>Retention reinforcement. A/B test the Discovery Map visual. Monitor correlation with artist follows and playlist saves.</td></tr>
+                <tr><td>Phase 3 (90+ days)</td><td>All premium users, then free tier 6 months later</td><td>Full platform scale. Free tier: 3 sessions/week, ad-supported, hard wall upgrade prompt at limit.</td></tr>
               </tbody>
             </table>
           </div>
-          <p style="margin-top: 12px;"><strong>History-Off Mode:</strong> Discovery sessions don't feed back into your
-            main recommendation engine unless you explicitly save tracks. This preserves the integrity of your core
-            taste profile.</p>
         </div>
 
         <div class="modal-divider"></div>
 
         <div class="modal-section">
-          <h3>How This Is Different from DJ</h3>
+          <h3>Risk Assessment</h3>
           <div class="modal-table-wrap">
             <table class="modal-table">
-              <thead>
-                <tr>
-                  <th>Dimension</th>
-                  <th>DJ Feature</th>
-                  <th>Discover Music</th>
-                </tr>
-              </thead>
+              <thead><tr><th>Risk</th><th>Likelihood</th><th>Mitigation</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>Input</td>
-                  <td>None (passive)</td>
-                  <td>Natural language (active)</td>
-                </tr>
-                <tr>
-                  <td>Data source</td>
-                  <td>Your behavioral history</td>
-                  <td>Community music intelligence</td>
-                </tr>
-                <tr>
-                  <td>Discovery depth</td>
-                  <td>Bounded by your history</td>
-                  <td>Breaks out of your history</td>
-                </tr>
-                <tr>
-                  <td>History isolation</td>
-                  <td>No</td>
-                  <td>Yes (history-off mode)</td>
-                </tr>
+                <tr><td>Major label conflict over stream diversion to independent artists</td><td>High without proactive management</td><td>Negotiate minimum stream percentage guarantee for major label content before launch. Surface through deep catalog tracks, not exclusively independent artists.</td></tr>
+                <tr><td>Playlist quality misses: generated playlist feels irrelevant to description</td><td>High in early iterations</td><td>Closed beta with tight feedback loop. In-session prompt: "Did you discover something you would not have found otherwise?" Use responses to calibrate before broad release.</td></tr>
+                <tr><td>Community intelligence layer low signal in niche genres</td><td>Medium</td><td>Seed 10 genre communities 2–3 months before launch with minimum 500 posts each. Layer 1 catalogue data acts as fallback when community signal is thin.</td></tr>
+                <tr><td>Feature cannibalises AI DJ without adding net new engagement</td><td>Low</td><td>Monitor DJ cannibalisation rate. Full track playback and history-off mode serve a fundamentally different use case than the DJ.</td></tr>
               </tbody>
             </table>
           </div>
-          <p style="margin-top: 12px;">DJ is a better shuffle. Discover Music is a new discovery primitive.</p>
-        </div>
-
-        <div class="modal-divider"></div>
-
-        <div class="modal-section">
-          <h3>Objection Defenses</h3>
-          <ul>
-            <li><strong>"Isn't this just the DJ feature?"</strong> DJ is reactive: it uses what you already know.
-              Discover Music is proactive: it uses what the community knows. The input mechanism and data source are
-              both different.</li>
-            <li><strong>"Won't users just switch to YouTube Music?"</strong> YouTube Music's discovery is better for
-              rabbit holes but disconnected from library management. Discover Music keeps the discovery session inside
-              Spotify's ecosystem, with seamless save-to-library flow.</li>
-            <li><strong>"Discovery Mode already exists for artists. How is this different?"</strong> Discovery Mode is
-              an artist-side tool for label promotion, not a listener-side discovery tool. These are entirely different
-              surfaces with different stakeholders.</li>
-          </ul>
         </div>
 
         <div class="modal-divider"></div>
 
         <div class="modal-section">
           <h3>Success Metrics</h3>
+          <p><strong>Primary:</strong> Feature-attributed track saves — songs first encountered through Discover Music subsequently saved to liked songs or a personal playlist, measured against a baseline of saves from standard recommendations.</p>
+          <p><strong>Downstream:</strong></p>
           <ul>
-            <li>Discovery session starts per week (niche listener cohort)</li>
-            <li>New artist saves per session (tracks saved from Discover Music that weren't in library before)</li>
-            <li>7-day retention on discovered tracks</li>
-            <li>Churn rate delta for niche listeners vs. control group</li>
-            <li>NPS delta among Spotify Premium niche listener segment</li>
+            <li>Post-discovery artist follows: users who follow a new artist after a Discover Music session</li>
+            <li>Session return rate: users who complete more than one session within 30 days</li>
+            <li>Playlist fatigue conversion rate: percentage of fatigue-cohort users who return to active music-adding behavior within 30 days of first session</li>
+            <li>Free-to-premium conversion rate: percentage of free users who upgrade after hitting the three-session weekly limit</li>
+          </ul>
+          <p><strong>Guardrails:</strong></p>
+          <ul>
+            <li>Session abandonment rate within the first 60 seconds</li>
+            <li>AI DJ cannibalisation rate</li>
+            <li>Label stream distribution: percentage of Discover Music-generated streams going to major label content, tracked against the negotiated minimum guarantee</li>
           </ul>
         </div>
 
       </div>
       <div class="modal-footer">
-        <a class="modal-notion-link" href="https://www.notion.so/350a478ca6ea81a7a459cdf28ea00144" target="_blank">View
-          on Notion ↗</a>
+        <a class="modal-notion-link" href="https://www.notion.so/350a478ca6ea81a7a459cdf28ea00144" target="_blank">View on Notion ↗</a>
       </div>
     </div>
   </div>
