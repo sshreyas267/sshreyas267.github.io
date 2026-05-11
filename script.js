@@ -96,15 +96,24 @@ function renderModal(cs) {
       ${section.content.map(renderBlock).join('')}
     </div>`).join('');
 
+  const embed = cs.embedUrl ? `
+    <div class="modal-divider"></div>
+    <div class="modal-section">
+      <h3>Full Presentation</h3>
+      <div class="modal-embed-wrap">
+        <iframe src="${cs.embedUrl}" frameborder="0" allowfullscreen class="modal-embed"></iframe>
+      </div>
+    </div>` : '';
+
   return `<div class="modal-overlay" id="modal-${cs.id}" role="dialog" aria-modal="true">
-    <div class="modal">
+    <div class="modal${cs.embedUrl ? ' modal--wide' : ''}">
       <div class="modal-header">
         <div class="modal-title">${cs.emoji} ${cs.title}</div>
         <button class="modal-close" onclick="closeModal('modal-${cs.id}')" aria-label="Close">×</button>
       </div>
       <p class="modal-summary">${cs.summary}</p>
       <div class="modal-tags">${cs.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-      <div class="modal-body">${body}</div>
+      <div class="modal-body">${body}${embed}</div>
       <div class="modal-footer">${cs.notionUrl
         ? `<a class="modal-notion-link" href="${cs.notionUrl}" target="_blank">View on Notion ↗</a>`
         : ''}</div>
