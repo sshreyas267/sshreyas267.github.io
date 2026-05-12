@@ -278,8 +278,7 @@ h2 {
 .info-card--static:hover { border-color: #e8e8e8; box-shadow: none; }
 .info-card-logo { height: 36px; width: auto; object-fit: contain; flex-shrink: 0; opacity: 0.75; }
 img.info-card-logo[src="uw-logo.svg"] { height: 52px; }
-.info-card-logo-inline { width: 36px; height: 36px; object-fit: contain; border-radius: 6px; flex-shrink: 0; margin-left: 12px; opacity: 0.85; }
-img.info-card-logo-inline[src="wisconsin-union-logo.png"] { width: 80px; height: 28px; border-radius: 0; }
+.info-card-logo-inline { width: 48px; height: 48px; object-fit: contain; border-radius: 8px; flex-shrink: 0; margin-left: 12px; opacity: 0.85; }
 .info-card-chevron { font-size: 11px; color: #bbb; flex-shrink: 0; transition: transform 0.2s, color 0.15s; }
 .info-card:hover .info-card-chevron { color: #2563EB; }
 .info-card.open .info-card-chevron { transform: rotate(180deg); color: #2563EB; }
