@@ -275,6 +275,7 @@ h2 {
 .info-card-courses { font-size: 11px; color: #bbb; margin-top: 5px; letter-spacing: 0.01em; }
 .info-card--static { cursor: default; }
 .info-card--static:hover { border-color: #e8e8e8; box-shadow: none; }
+.info-card-logo { height: 36px; width: auto; object-fit: contain; flex-shrink: 0; opacity: 0.75; }
 .info-card-chevron { font-size: 11px; color: #bbb; flex-shrink: 0; transition: transform 0.2s, color 0.15s; }
 .info-card:hover .info-card-chevron { color: #2563EB; }
 .info-card.open .info-card-chevron { transform: rotate(180deg); color: #2563EB; }
