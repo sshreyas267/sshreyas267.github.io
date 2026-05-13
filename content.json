@@ -99,6 +99,59 @@
         }
       ],
       "embedUrl": "https://docs.google.com/presentation/d/e/2PACX-1vQJKqseWtf6UwGy0KJ3FRbOXsZouqTj7wtgNUnnmLZ3HktoOYNyM974NI_4cujQOw/pubembed?start=false&loop=false&delayms=5000"
+    },
+    {
+      "id": "notion",
+      "emoji": "📝",
+      "title": "Notion: Guided Mode",
+      "cardSummary": "A feature recommendation to solve Notion's structural activation problem: 100M users, only 4M paying. Guided Mode is a reactive AI assistant that helps middle users find their footing without changing the power user experience at all.",
+      "tags": [
+        "Competitive Analysis",
+        "User Research",
+        "Feature Recommendation",
+        "Monetisation Strategy",
+        "Business Case",
+        "Roadmap"
+      ],
+      "notionUrl": "",
+      "summary": "Notion has a retention problem its headline numbers obscure. 100M users, 4M paying — a ~4% conversion rate against a 5–8% best-in-class benchmark. The gap is not a pricing problem. It is an activation problem. Guided Mode is a user-triggered AI assistant built as a free tier of Notion AI, designed to bring middle users to the product's value without touching the power user experience.",
+      "sections": [
+        {
+          "heading": "The Problem",
+          "content": [
+            {
+              "type": "p",
+              "text": "A significant portion of Notion's 100 million users never get past the blank canvas. They sign up, face an empty page with infinite options, and either give up or find a simpler alternative. These users are not failing because Notion is a bad product. They are failing because Notion was never designed for them."
+            },
+            {
+              "type": "blockquote",
+              "text": "The middle user wants a tool that is collaborative enough for group work and capable enough for personal writing, without requiring significant time to configure. This user exists in large numbers inside Notion's own user base — they signed up, but they have never seen the product work for them."
+            }
+          ]
+        },
+        {
+          "heading": "The Recommendation",
+          "content": [
+            {
+              "type": "p",
+              "text": "Notion Guided Mode: a <strong>user-triggered AI assistant</strong> built into Notion as a free tier of Notion AI. It explains features in plain language, suggests templates based on the user's stated goal, and walks users through setup step by step. It activates only when explicitly asked. It does not surface suggestions proactively, does not modify the interface, and does not affect any user who does not engage with it."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "<strong>User-triggered only:</strong> the guide never activates unless a user asks — Notion's data never conflates guided users with successful users",
+                "<strong>Toggle on/off:</strong> power users can disable it permanently; middle users keep it on; two user types, one product surface",
+                "<strong>Free tier of Notion AI:</strong> paywalling the guide would charge users for the solution to a problem Notion created"
+              ]
+            },
+            {
+              "type": "blockquote",
+              "text": "A middle user who gets comfortable with Notion through the free guide is a much warmer conversion target for paid Notion AI than a cold user staring at a blank canvas who never experienced the product's value."
+            }
+          ]
+        }
+      ],
+      "embedUrl": "https://docs.google.com/presentation/d/e/2PACX-1vSwY8liQ_kb-aZ3GS0502gwsHw1ES9-pXjiREgb5hIM5J9qyPcV9W7OJ66ajP8rhs34zEz1DnNzX5sg/pubembed?start=false&loop=false&delayms=5000"
     }
   ]
 }
