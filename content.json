@@ -33,7 +33,7 @@
             {
               "type": "p",
               "text": "A Chrome extension allowing users to initiate a timed focus session capped at 90 minutes. Once a session begins, the browser locks to a pre-defined group of approved tabs. If a user attempts to exit early, a <strong>15-second countdown</strong> prompts confirmation. The goal is pause, not punishment."
-            },
+            }
           ]
         }
       ],
