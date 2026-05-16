@@ -42,10 +42,8 @@ section:last-of-type { border-bottom: none; }
 /* Nav */
 nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(239, 246, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.6);
+  background: #ffffff;
+  border-bottom: 1px solid #e8eef6;
   padding: 0;
 }
 nav .container { display: flex; justify-content: space-between; align-items: center; height: 56px; }
