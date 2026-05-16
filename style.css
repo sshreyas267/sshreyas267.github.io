@@ -46,6 +46,11 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f8fbff 40%, #ffffff 70%);
+  border-radius: 20px;
+  margin: 16px -32px 0;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .hero-left { flex: 1; }
 
@@ -55,14 +60,14 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 12%;
-  border: 3px solid #e8e8e8;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 3px #2563EB, 0 2px 16px rgba(0,0,0,0.10);
   flex-shrink: 0;
   cursor: pointer;
   transition: box-shadow 0.15s, transform 0.15s;
 }
 .hero-avatar:hover {
-  box-shadow: 0 4px 24px rgba(37,99,235,0.18);
+  box-shadow: 0 0 0 4px #2563EB, 0 4px 24px rgba(37,99,235,0.25);
   transform: scale(1.03);
 }
 
@@ -104,8 +109,8 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
   margin-bottom: 20px;
 }
 .hero h1 {
-  font-size: 40px; font-weight: 600;
-  letter-spacing: -0.5px; line-height: 1.15;
+  font-size: 52px; font-weight: 600;
+  letter-spacing: -1px; line-height: 1.1;
   margin-bottom: 14px;
 }
 .hero .subtitle {
@@ -133,14 +138,35 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
 
 /* Section labels */
 h2 {
-  font-size: 11px; font-weight: 600;
+  font-size: 13px; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: #2563EB; margin-bottom: 32px;
+}
+
+/* Hero pills */
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 500; color: #555;
+  background: #f1f5f9; border: 1px solid #e2e8f0;
+  padding: 5px 13px; border-radius: 100px;
+}
+.hero-pill--status {
+  background: #f0fdf4; color: #16a34a;
+  border-color: #bbf7d0;
 }
 
 /* About */
 .about-body { display: flex; flex-direction: column; gap: 14px; }
 .about-body p { font-size: 16px; color: #333; line-height: 1.8; }
+.about-pullquote {
+  font-size: 16px; font-weight: 500; color: #1e293b;
+  border-left: 3px solid #2563EB;
+  padding: 12px 20px;
+  background: #f8fbff;
+  border-radius: 0 10px 10px 0;
+  line-height: 1.7;
+  margin: 4px 0;
+}
 
 /* Case Studies */
 .case-studies { display: flex; flex-direction: column; gap: 14px; }
@@ -200,7 +226,7 @@ h2 {
 /* Skills */
 .skills-groups { display: flex; flex-direction: column; gap: 28px; }
 .skills-group h3 {
-  font-size: 11px; font-weight: 600;
+  font-size: 13px; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase;
   color: #94a3b8; margin-bottom: 12px;
 }
@@ -315,9 +341,9 @@ footer {
 
 /* Responsive */
 @media (max-width: 580px) {
-  .hero { flex-direction: column-reverse; align-items: flex-start; gap: 24px; }
+  .hero { flex-direction: column-reverse; align-items: flex-start; gap: 24px; margin: 8px -16px 0; padding-left: 20px; padding-right: 20px; }
   .hero-avatar { width: 80px; height: 80px; }
-  .hero h1 { font-size: 28px; }
+  .hero h1 { font-size: 34px; }
   .hero .subtitle { font-size: 16px; }
   section { padding: 40px 0; }
   nav .links { gap: 0; }
