@@ -135,12 +135,29 @@ function renderBlock(block) {
   }
 }
 
+const CARD_COVERS = {
+  browser: { type: 'image', src: 'focusvault-banner.png', imgStyle: 'object-fit:cover;' },
+  spotify: { type: 'color', bg: '#1DB954', src: 'spotify-logo.png', imgStyle: 'object-fit:contain;padding:36px;' },
+  notion:  { type: 'color', bg: '#191919', src: 'notion-logo.png',  imgStyle: 'object-fit:contain;padding:44px;' },
+};
+
 function renderCaseCard(cs) {
+  const cover = CARD_COVERS[cs.id] || { type: 'color', bg: '#1e3a8a' };
+  const coverStyle = cover.bg ? `background:${cover.bg}` : '';
+  const imgTag = cover.src
+    ? `<img src="${cover.src}" alt="${cs.title}" style="position:absolute;inset:0;width:100%;height:100%;${cover.imgStyle}">`
+    : '';
   return `<button class="case-card" onclick="openModal('modal-${cs.id}')">
-    <h3>${cs.title}</h3>
-    <p>${cs.cardSummary}</p>
-    <div class="tags">${cs.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-    <span class="arrow">↗</span>
+    <div class="case-card-cover" style="${coverStyle}">
+      ${imgTag}
+      <div class="case-card-cover-overlay"></div>
+    </div>
+    <div class="case-card-body">
+      <h3>${cs.title}</h3>
+      <p>${cs.cardSummary}</p>
+      <div class="tags">${cs.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <span class="arrow">↗</span>
+    </div>
   </button>`;
 }
 
