@@ -19,7 +19,7 @@ a:hover { opacity: 0.6; }
 
 /* Layout */
 .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-section { padding: 56px 0; border-bottom: 1px solid #f0f0f0; }
+section { padding: 56px 0; border-bottom: 1px solid #111; }
 section:last-of-type { border-bottom: none; }
 
 
