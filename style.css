@@ -149,7 +149,7 @@ h2 {
 /* Hero pills */
 .hero-pill {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: 12px; font-weight: 500; color: #111;
+  font-size: 15px; font-weight: 500; color: #111;
   background: #f1f5f9; border: 1px solid #e2e8f0;
   padding: 5px 13px; border-radius: 100px;
 }
@@ -259,7 +259,7 @@ h2 {
 .contact-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
 .contact-item {
   display: flex; align-items: center; gap: 14px;
-  font-size: 15px; color: #111;
+  font-size: 18px; color: #111;
   text-decoration: none;
   transition: color 0.15s;
 }
