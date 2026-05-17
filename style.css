@@ -25,10 +25,15 @@ section:last-of-type { border-bottom: none; }
 /* Card treatment for all non-hero sections */
 .page-section > section:not(.hero),
 .page-section > div > section:not(.hero) {
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid #e8e8e8;
-  box-shadow: 0 2px 14px rgba(37,99,235,0.07);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 4px 12px rgba(0,0,0,0.06),
+    0 16px 40px rgba(37,99,235,0.10);
   padding: 48px;
   margin: 24px 0;
   border-bottom: none;
@@ -61,22 +66,33 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  background: #fff;
-  border-radius: 16px 16px 0 0;
-  border: 1px solid #e8e8e8;
-  border-bottom: 1px solid #f0f0f0;
-  box-shadow: 0 2px 14px rgba(37,99,235,0.07);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px 20px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 4px 12px rgba(0,0,0,0.06),
+    0 16px 40px rgba(37,99,235,0.10),
+    0 32px 64px rgba(37,99,235,0.08);
   margin: 24px 0 0;
   padding: 56px 48px;
 }
 
 /* About section continues the hero card */
 #section-about #about {
-  background: #fff;
-  border-radius: 0 0 16px 16px;
-  border: 1px solid #e8e8e8;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0 0 20px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-top: none;
-  box-shadow: 0 2px 14px rgba(37,99,235,0.07);
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.06),
+    0 16px 40px rgba(37,99,235,0.10),
+    0 32px 64px rgba(37,99,235,0.08);
   padding: 48px;
   margin: 0;
   border-bottom: none;
@@ -312,13 +328,13 @@ h2 {
 /* Info cards (experience, education, awards) — accordion */
 .info-card-list { display: flex; flex-direction: column; gap: 10px; }
 .info-card {
-  border: 1px solid #e8e8e8; border-radius: 10px;
-  cursor: pointer; background: #fff; width: 100%;
+  border: 1px solid rgba(255,255,255,0.7); border-radius: 10px;
+  cursor: pointer; background: rgba(255,255,255,0.5); width: 100%;
   transition: border-color 0.15s, box-shadow 0.15s;
   overflow: hidden;
 }
-.info-card:hover { border-color: #bfdbfe; box-shadow: 0 2px 14px rgba(37,99,235,0.07); }
-.info-card.open { border-color: #bfdbfe; box-shadow: 0 2px 14px rgba(37,99,235,0.07); }
+.info-card:hover { border-color: rgba(191,219,254,0.8); box-shadow: 0 2px 14px rgba(37,99,235,0.07); }
+.info-card.open { border-color: rgba(191,219,254,0.8); box-shadow: 0 2px 14px rgba(37,99,235,0.07); }
 .info-card-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 18px 22px; gap: 16px;
