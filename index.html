@@ -9,7 +9,7 @@
     content="Product Manager with a data science foundation. Building at the intersection of discovery, calm technology, and genuine user need.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=41">
+  <link rel="stylesheet" href="style.css?v=42">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
 </head>
@@ -168,7 +168,7 @@
           <!-- Code Robin -->
           <button class="exp-gallery-card" onclick="openModal('modal-exp-coderobin')">
             <div class="exp-gallery-cover" style="background:#111">
-              <img src="coderobin-logo.png" alt="Code Robin">
+              <img src="coderobin-banner.jpeg" alt="Code Robin" style="object-fit:contain; padding:0; transform:scale(1.3);">
             </div>
             <div class="exp-gallery-body">
               <div class="exp-gallery-role">Co-Founder &amp; Product Lead</div>
@@ -193,7 +193,7 @@
 
           <!-- Wisconsin Union -->
           <button class="exp-gallery-card" onclick="openModal('modal-exp-wu')">
-            <div class="exp-gallery-cover" style="background:#C5050C">
+            <div class="exp-gallery-cover" style="background:#1a5c38">
               <img src="wisconsin-union-logo.png" alt="Wisconsin Union">
             </div>
             <div class="exp-gallery-body">
@@ -211,28 +211,32 @@
       <div class="modal-overlay" id="modal-exp-coderobin" role="dialog" aria-modal="true">
         <div class="modal">
           <div class="modal-header">
-            <div class="modal-title">Co-Founder &amp; Product Lead · Code Robin</div>
+            <div class="modal-title">✈️ Co-Founder &amp; Product Lead · Code Robin</div>
             <button class="modal-close" onclick="closeModal('modal-exp-coderobin')" aria-label="Close">×</button>
           </div>
           <p class="modal-summary">Jan 2026 – Present · Chennai, India</p>
+          <div class="modal-tags"><span class="tag">AI Edtech</span><span class="tag">Discovery</span><span class="tag">PRD Writing</span><span class="tag">0 to 1</span></div>
           <div class="modal-body">
             <div class="modal-section">
-              <p>Building an AI edtech product that fills a structural gap in academic workflows, where no existing tool was designed for professor-led deployment inside a university LMS environment.</p>
+              <h3>The Gap</h3>
+              <blockquote>Every existing AI learning tool is built for students. None were designed for professor-led deployment inside a university LMS like Canvas. That gap became the product's positioning.</blockquote>
+            </div>
+            <div class="modal-divider"></div>
+            <div class="modal-section">
+              <h3>What I Did</h3>
+              <ul>
+                <li>Ran a structured competitive analysis across 12+ AI learning platforms to surface the positioning gap and define the product's core moat.</li>
+                <li>Conducted discovery interviews with university professors and identified Canvas LMS integration as the MVP's defining constraint.</li>
+                <li>Secured a faculty commitment to pilot the product in a live class — validating the problem before building anything.</li>
+                <li>Translated findings into a PRD and investor pitch deck; maintained living documentation across Jira and Confluence.</li>
+              </ul>
             </div>
             <div class="modal-divider"></div>
             <div class="modal-section">
               <div class="exp-stats">
                 <div class="exp-stat"><div class="exp-stat-number">12+</div><div class="exp-stat-label">platforms analyzed</div></div>
-                <div class="exp-stat"><div class="exp-stat-number">1</div><div class="exp-stat-label">live class pilot secured</div></div>
+                <div class="exp-stat"><div class="exp-stat-number">1</div><div class="exp-stat-label">live pilot secured</div></div>
               </div>
-            </div>
-            <div class="modal-divider"></div>
-            <div class="modal-section">
-              <ul>
-                <li>Ran a structured competitive analysis of 12+ AI learning platforms and found a clear positioning gap: every existing tool was built for students, not professors. No product was designed to be deployed by faculty inside an LMS like Canvas, which became the product's core positioning and moat.</li>
-                <li>Conducted discovery interviews with university professors to validate the problem and surface requirements. Identified Canvas LMS integration as the MVP's defining technical constraint and secured a faculty commitment to pilot the product in a live class, validating the problem without building first.</li>
-                <li>Translated discovery findings into a PRD covering problem framing, user personas, competitive landscape, and feature scope, alongside an investor pitch deck. Maintained living documentation across Jira and Confluence to keep engineering and stakeholders aligned as the product evolved.</li>
-              </ul>
             </div>
           </div>
         </div>
@@ -241,29 +245,32 @@
       <div class="modal-overlay" id="modal-exp-connyct" role="dialog" aria-modal="true">
         <div class="modal">
           <div class="modal-header">
-            <div class="modal-title">Technology Intern · Connyct Inc.</div>
+            <div class="modal-title">🔗 Technology Intern · Connyct Inc.</div>
             <button class="modal-close" onclick="closeModal('modal-exp-connyct')" aria-label="Close">×</button>
           </div>
           <p class="modal-summary">Aug 2025 – Dec 2025 · Remote</p>
+          <div class="modal-tags"><span class="tag">Data Quality</span><span class="tag">Automation</span><span class="tag">Process Design</span></div>
           <div class="modal-body">
             <div class="modal-section">
-              <p>Worked on the Campus AI product, a campus discovery platform dependent on accurate, structured data scraped from university sources.</p>
+              <h3>The Context</h3>
+              <blockquote>Campus AI is a campus discovery platform. Its recommendations are only as good as the data behind them — and the data was broken.</blockquote>
+            </div>
+            <div class="modal-divider"></div>
+            <div class="modal-section">
+              <h3>What I Did</h3>
+              <ul>
+                <li>Audited and corrected 10,000 scraped campus records to eliminate data inconsistencies degrading recommendation quality.</li>
+                <li>Identified a systemic scraping error pattern beyond original scope — flagged and corrected 200 additional discrepancies missed by standard review.</li>
+                <li>Built an automated validation framework encoding those error patterns into reusable checks, reducing manual effort by 80%. Adopted by interns as standard practice and endorsed by the founder.</li>
+              </ul>
             </div>
             <div class="modal-divider"></div>
             <div class="modal-section">
               <div class="exp-stats">
                 <div class="exp-stat"><div class="exp-stat-number">10K</div><div class="exp-stat-label">records audited</div></div>
-                <div class="exp-stat"><div class="exp-stat-number">200</div><div class="exp-stat-label">discrepancies caught</div></div>
+                <div class="exp-stat"><div class="exp-stat-number">200</div><div class="exp-stat-label">extra discrepancies caught</div></div>
                 <div class="exp-stat"><div class="exp-stat-number">80%</div><div class="exp-stat-label">less manual effort</div></div>
               </div>
-            </div>
-            <div class="modal-divider"></div>
-            <div class="modal-section">
-              <ul>
-                <li>Audited and corrected 10,000 scraped campus records feeding the Campus AI product, eliminating data inconsistencies that were degrading in-app recommendation quality and directly impacting how accurately the product represented campus life to its users.</li>
-                <li>While executing the core task, identified a systemic pattern of scraping errors that had gone undetected. Flagged and corrected 200 additional discrepancies beyond the original scope, improving dataset integrity at a level that would not have been caught through standard review.</li>
-                <li>Designed and built an automated validation framework that reduced manual correction effort by 80% by encoding the error patterns found during auditing into reusable checks. The framework was adopted by fellow interns as standard practice and formally endorsed by the founder as a process improvement.</li>
-              </ul>
             </div>
           </div>
         </div>
@@ -272,28 +279,31 @@
       <div class="modal-overlay" id="modal-exp-wu" role="dialog" aria-modal="true">
         <div class="modal">
           <div class="modal-header">
-            <div class="modal-title">Student Lead · Wisconsin Union</div>
+            <div class="modal-title">☕ Student Lead · Wisconsin Union</div>
             <button class="modal-close" onclick="closeModal('modal-exp-wu')" aria-label="Close">×</button>
           </div>
           <p class="modal-summary">Sep 2023 – May 2025 · Madison, WI</p>
+          <div class="modal-tags"><span class="tag">Operations</span><span class="tag">Team Leadership</span><span class="tag">Data Modeling</span></div>
           <div class="modal-body">
             <div class="modal-section">
-              <p>Student-run café on the UW-Madison campus. Served as a supervisory lead managing daily operations and team coordination alongside coursework.</p>
+              <h3>The Role</h3>
+              <blockquote>Supervisory lead at a student-run café on the UW-Madison campus — managing operations and team coordination alongside a full graduate course load.</blockquote>
+            </div>
+            <div class="modal-divider"></div>
+            <div class="modal-section">
+              <h3>What I Did</h3>
+              <ul>
+                <li>Supervised daily shift operations for a team of baristas, managing scheduling, real-time task delegation, and staff-to-management communication during high-demand periods.</li>
+                <li>Selected as one of 10 university-wide North Star Initiative supervisors — contributed to retention decisions and identified friction points in onboarding and early-shift experience.</li>
+                <li>Built a staffing demand model cross-referencing scheduling data with the campus events calendar, raising event-day accuracy from 75% to 95% and eliminating recurring shortfalls on high-traffic days.</li>
+              </ul>
             </div>
             <div class="modal-divider"></div>
             <div class="modal-section">
               <div class="exp-stats">
-                <div class="exp-stat"><div class="exp-stat-number">75→95%</div><div class="exp-stat-label">data accuracy</div></div>
+                <div class="exp-stat"><div class="exp-stat-number">75→95%</div><div class="exp-stat-label">event-day data accuracy</div></div>
                 <div class="exp-stat"><div class="exp-stat-number">Top 10</div><div class="exp-stat-label">North Star supervisors</div></div>
               </div>
-            </div>
-            <div class="modal-divider"></div>
-            <div class="modal-section">
-              <ul>
-                <li>Supervised a student team of baristas across daily shifts, maintaining consistent café operations during high-demand academic periods by managing scheduling, real-time task delegation, and direct communication between floor staff and store management.</li>
-                <li>Selected as one of 10 university-wide North Star Initiative supervisors, a program designed to improve student employee retention across campus. Contributed to management retention decisions and helped reduce onboarding drop-off by identifying friction points in the training and early-shift experience.</li>
-                <li>Built a staffing demand model that cross-referenced scheduling data with the campus events calendar, raising event-day data accuracy from 75% to 95%. Eliminated the recurring manual entry errors that had been causing staffing shortfalls on high-traffic days.</li>
-              </ul>
             </div>
           </div>
         </div>
