@@ -9,7 +9,7 @@
     content="Product Manager with a data science foundation. Building at the intersection of discovery, calm technology, and genuine user need.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=39">
+  <link rel="stylesheet" href="style.css?v=40">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
 </head>
@@ -163,30 +163,71 @@
     <div class="page-section" id="section-experience">
       <section id="experience">
         <h2>Experience</h2>
-        <div class="info-card-list">
+        <div class="exp-gallery">
 
-          <div class="info-card" onclick="toggleCard(this)">
-            <div class="info-card-header">
-              <div class="info-card-main">
-                <div class="info-card-title">Co-Founder &amp; Product Lead</div>
-                <div class="info-card-org">Code Robin</div>
-                <div class="info-card-meta">Jan 2026 – Present · Chennai, India</div>
-              </div>
-              <img src="coderobin-logo.png" alt="Code Robin" class="info-card-logo-inline">
-              <span class="info-card-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+          <!-- Code Robin -->
+          <button class="exp-gallery-card" onclick="openModal('modal-exp-coderobin')">
+            <div class="exp-gallery-cover" style="background:#111">
+              <img src="coderobin-logo.png" alt="Code Robin">
             </div>
-            <div class="info-card-body">
-              <p class="info-card-context">Building an AI edtech product that fills a structural gap in academic workflows, where no existing tool was designed for professor-led deployment inside a university LMS environment.</p>
+            <div class="exp-gallery-body">
+              <div class="exp-gallery-role">Co-Founder &amp; Product Lead</div>
+              <div class="exp-gallery-company">Code Robin</div>
+              <div class="exp-gallery-meta">Jan 2026 – Present · Chennai, India</div>
+              <span class="exp-gallery-arrow">↗</span>
+            </div>
+          </button>
+
+          <!-- Connyct -->
+          <button class="exp-gallery-card" onclick="openModal('modal-exp-connyct')">
+            <div class="exp-gallery-cover" style="background:#E91E8C">
+              <img src="connyct-logo.png" alt="Connyct Inc.">
+            </div>
+            <div class="exp-gallery-body">
+              <div class="exp-gallery-role">Technology Intern</div>
+              <div class="exp-gallery-company">Connyct Inc.</div>
+              <div class="exp-gallery-meta">Aug 2025 – Dec 2025 · Remote</div>
+              <span class="exp-gallery-arrow">↗</span>
+            </div>
+          </button>
+
+          <!-- Wisconsin Union -->
+          <button class="exp-gallery-card" onclick="openModal('modal-exp-wu')">
+            <div class="exp-gallery-cover" style="background:#C5050C">
+              <img src="wisconsin-union-logo.png" alt="Wisconsin Union">
+            </div>
+            <div class="exp-gallery-body">
+              <div class="exp-gallery-role">Student Lead</div>
+              <div class="exp-gallery-company">Wisconsin Union</div>
+              <div class="exp-gallery-meta">Sep 2023 – May 2025 · Madison, WI</div>
+              <span class="exp-gallery-arrow">↗</span>
+            </div>
+          </button>
+
+        </div>
+      </section>
+
+      <!-- Experience modals -->
+      <div class="modal-overlay" id="modal-exp-coderobin" role="dialog" aria-modal="true">
+        <div class="modal">
+          <div class="modal-header">
+            <div class="modal-title">Co-Founder &amp; Product Lead · Code Robin</div>
+            <button class="modal-close" onclick="closeModal('modal-exp-coderobin')" aria-label="Close">×</button>
+          </div>
+          <p class="modal-summary">Jan 2026 – Present · Chennai, India</p>
+          <div class="modal-body">
+            <div class="modal-section">
+              <p>Building an AI edtech product that fills a structural gap in academic workflows, where no existing tool was designed for professor-led deployment inside a university LMS environment.</p>
+            </div>
+            <div class="modal-divider"></div>
+            <div class="modal-section">
               <div class="exp-stats">
-                <div class="exp-stat">
-                  <div class="exp-stat-number">12+</div>
-                  <div class="exp-stat-label">platforms analyzed</div>
-                </div>
-                <div class="exp-stat">
-                  <div class="exp-stat-number">1</div>
-                  <div class="exp-stat-label">live class pilot secured</div>
-                </div>
+                <div class="exp-stat"><div class="exp-stat-number">12+</div><div class="exp-stat-label">platforms analyzed</div></div>
+                <div class="exp-stat"><div class="exp-stat-number">1</div><div class="exp-stat-label">live class pilot secured</div></div>
               </div>
+            </div>
+            <div class="modal-divider"></div>
+            <div class="modal-section">
               <ul>
                 <li>Ran a structured competitive analysis of 12+ AI learning platforms and found a clear positioning gap: every existing tool was built for students, not professors. No product was designed to be deployed by faculty inside an LMS like Canvas, which became the product's core positioning and moat.</li>
                 <li>Conducted discovery interviews with university professors to validate the problem and surface requirements. Identified Canvas LMS integration as the MVP's defining technical constraint and secured a faculty commitment to pilot the product in a live class, validating the problem without building first.</li>
@@ -194,33 +235,30 @@
               </ul>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="info-card" onclick="toggleCard(this)">
-            <div class="info-card-header">
-              <div class="info-card-main">
-                <div class="info-card-title">Technology Intern</div>
-                <div class="info-card-org">Connyct Inc.</div>
-                <div class="info-card-meta">Aug 2025 – Dec 2025 · Remote</div>
-              </div>
-              <img src="connyct-logo.png" alt="Connyct Inc." class="info-card-logo-inline">
-              <span class="info-card-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+      <div class="modal-overlay" id="modal-exp-connyct" role="dialog" aria-modal="true">
+        <div class="modal">
+          <div class="modal-header">
+            <div class="modal-title">Technology Intern · Connyct Inc.</div>
+            <button class="modal-close" onclick="closeModal('modal-exp-connyct')" aria-label="Close">×</button>
+          </div>
+          <p class="modal-summary">Aug 2025 – Dec 2025 · Remote</p>
+          <div class="modal-body">
+            <div class="modal-section">
+              <p>Worked on the Campus AI product, a campus discovery platform dependent on accurate, structured data scraped from university sources.</p>
             </div>
-            <div class="info-card-body">
-              <p class="info-card-context">Worked on the Campus AI product, a campus discovery platform dependent on accurate, structured data scraped from university sources.</p>
+            <div class="modal-divider"></div>
+            <div class="modal-section">
               <div class="exp-stats">
-                <div class="exp-stat">
-                  <div class="exp-stat-number">10K</div>
-                  <div class="exp-stat-label">records audited</div>
-                </div>
-                <div class="exp-stat">
-                  <div class="exp-stat-number">200</div>
-                  <div class="exp-stat-label">discrepancies caught</div>
-                </div>
-                <div class="exp-stat">
-                  <div class="exp-stat-number">80%</div>
-                  <div class="exp-stat-label">less manual effort</div>
-                </div>
+                <div class="exp-stat"><div class="exp-stat-number">10K</div><div class="exp-stat-label">records audited</div></div>
+                <div class="exp-stat"><div class="exp-stat-number">200</div><div class="exp-stat-label">discrepancies caught</div></div>
+                <div class="exp-stat"><div class="exp-stat-number">80%</div><div class="exp-stat-label">less manual effort</div></div>
               </div>
+            </div>
+            <div class="modal-divider"></div>
+            <div class="modal-section">
               <ul>
                 <li>Audited and corrected 10,000 scraped campus records feeding the Campus AI product, eliminating data inconsistencies that were degrading in-app recommendation quality and directly impacting how accurately the product represented campus life to its users.</li>
                 <li>While executing the core task, identified a systemic pattern of scraping errors that had gone undetected. Flagged and corrected 200 additional discrepancies beyond the original scope, improving dataset integrity at a level that would not have been caught through standard review.</li>
@@ -228,29 +266,29 @@
               </ul>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="info-card" onclick="toggleCard(this)">
-            <div class="info-card-header">
-              <div class="info-card-main">
-                <div class="info-card-title">Student Lead</div>
-                <div class="info-card-org">Wisconsin Union</div>
-                <div class="info-card-meta">Sep 2023 – May 2025 · Madison, WI</div>
-              </div>
-              <img src="wisconsin-union-logo.png" alt="Wisconsin Union" class="info-card-logo-inline">
-              <span class="info-card-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+      <div class="modal-overlay" id="modal-exp-wu" role="dialog" aria-modal="true">
+        <div class="modal">
+          <div class="modal-header">
+            <div class="modal-title">Student Lead · Wisconsin Union</div>
+            <button class="modal-close" onclick="closeModal('modal-exp-wu')" aria-label="Close">×</button>
+          </div>
+          <p class="modal-summary">Sep 2023 – May 2025 · Madison, WI</p>
+          <div class="modal-body">
+            <div class="modal-section">
+              <p>Student-run café on the UW-Madison campus. Served as a supervisory lead managing daily operations and team coordination alongside coursework.</p>
             </div>
-            <div class="info-card-body">
-              <p class="info-card-context">Student-run café on the UW-Madison campus. Served as a supervisory lead managing daily operations and team coordination alongside coursework.</p>
+            <div class="modal-divider"></div>
+            <div class="modal-section">
               <div class="exp-stats">
-                <div class="exp-stat">
-                  <div class="exp-stat-number">75→95%</div>
-                  <div class="exp-stat-label">data accuracy</div>
-                </div>
-                <div class="exp-stat">
-                  <div class="exp-stat-number">Top 10</div>
-                  <div class="exp-stat-label">North Star supervisors</div>
-                </div>
+                <div class="exp-stat"><div class="exp-stat-number">75→95%</div><div class="exp-stat-label">data accuracy</div></div>
+                <div class="exp-stat"><div class="exp-stat-number">Top 10</div><div class="exp-stat-label">North Star supervisors</div></div>
               </div>
+            </div>
+            <div class="modal-divider"></div>
+            <div class="modal-section">
               <ul>
                 <li>Supervised a student team of baristas across daily shifts, maintaining consistent café operations during high-demand academic periods by managing scheduling, real-time task delegation, and direct communication between floor staff and store management.</li>
                 <li>Selected as one of 10 university-wide North Star Initiative supervisors, a program designed to improve student employee retention across campus. Contributed to management retention decisions and helped reduce onboarding drop-off by identifying friction points in the training and early-shift experience.</li>
@@ -258,35 +296,36 @@
               </ul>
             </div>
           </div>
-
         </div>
-      </section>
+      </div>
 
       <section>
         <h2>Education</h2>
-        <div class="info-card-list">
+        <div class="edu-timeline">
 
-          <div class="info-card info-card--static">
-            <div class="info-card-header">
-              <div class="info-card-main">
-                <div class="info-card-title">MS in Data Science</div>
-                <div class="info-card-org">University of Wisconsin-Madison</div>
-                <div class="info-card-meta">Sep 2023 – May 2025</div>
-                <div class="info-card-courses"><span class="info-card-courses-label">Courses</span>Big Data Systems · Statistical Modeling · Statistical Methods</div>
+          <div class="edu-timeline-item">
+            <div class="edu-timeline-dot"></div>
+            <div class="edu-timeline-card">
+              <img src="uw-logo.svg" alt="UW-Madison" class="edu-timeline-logo" style="background:#C5050C">
+              <div class="edu-timeline-info">
+                <div class="edu-timeline-degree">MS in Data Science</div>
+                <div class="edu-timeline-school">University of Wisconsin-Madison</div>
+                <div class="edu-timeline-meta">Sep 2023 – May 2025</div>
+                <div class="edu-timeline-courses"><span class="edu-timeline-courses-label">Courses</span>Big Data Systems · Statistical Modeling · Statistical Methods</div>
               </div>
-              <img src="uw-logo.svg" alt="UW-Madison" class="info-card-logo">
             </div>
           </div>
 
-          <div class="info-card info-card--static">
-            <div class="info-card-header">
-              <div class="info-card-main">
-                <div class="info-card-title">B.Tech in Computer Science</div>
-                <div class="info-card-org">SRM Institute of Science and Technology</div>
-                <div class="info-card-meta">Jul 2019 – May 2023</div>
-                <div class="info-card-courses"><span class="info-card-courses-label">Courses</span>Data Visualization · Database Management Systems · Management Information Systems</div>
+          <div class="edu-timeline-item">
+            <div class="edu-timeline-dot"></div>
+            <div class="edu-timeline-card">
+              <img src="srm-logo.png" alt="SRM" class="edu-timeline-logo" style="background:#003087">
+              <div class="edu-timeline-info">
+                <div class="edu-timeline-degree">B.Tech in Computer Science</div>
+                <div class="edu-timeline-school">SRM Institute of Science and Technology</div>
+                <div class="edu-timeline-meta">Jul 2019 – May 2023</div>
+                <div class="edu-timeline-courses"><span class="edu-timeline-courses-label">Courses</span>Data Visualization · Database Management Systems · Management Information Systems</div>
               </div>
-              <img src="srm-logo.png" alt="SRM" class="info-card-logo">
             </div>
           </div>
 
