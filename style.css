@@ -25,15 +25,10 @@ section:last-of-type { border-bottom: none; }
 /* Card treatment for all non-hero sections */
 .page-section > section:not(.hero),
 .page-section > div > section:not(.hero) {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow:
-    0 1px 2px rgba(0,0,0,0.04),
-    0 4px 12px rgba(0,0,0,0.06),
-    0 16px 40px rgba(37,99,235,0.10);
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 14px rgba(37,99,235,0.07);
   padding: 48px;
   margin: 24px 0;
   border-bottom: none;
@@ -66,33 +61,22 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 24px 24px 0 0;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  box-shadow:
-    0 1px 2px rgba(0,0,0,0.04),
-    0 4px 12px rgba(0,0,0,0.06),
-    0 16px 40px rgba(37,99,235,0.10),
-    0 32px 64px rgba(37,99,235,0.08);
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  border: 1px solid #e8e8e8;
+  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 2px 14px rgba(37,99,235,0.07);
   margin: 24px 0 0;
   padding: 56px 48px;
 }
 
 /* About section continues the hero card */
 #section-about #about {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 0 0 20px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: #fff;
+  border-radius: 0 0 16px 16px;
+  border: 1px solid #e8e8e8;
   border-top: none;
-  box-shadow:
-    0 4px 12px rgba(0,0,0,0.06),
-    0 16px 40px rgba(37,99,235,0.10),
-    0 32px 64px rgba(37,99,235,0.08);
+  box-shadow: 0 2px 14px rgba(37,99,235,0.07);
   padding: 48px;
   margin: 0;
   border-bottom: none;
