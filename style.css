@@ -48,8 +48,8 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
 
 /* Hero */
 .hero {
-  margin: 24px 0 0;
-  padding: 48px 0 16px;
+  margin: 8px 0 0;
+  padding: 24px 0 16px;
 }
 .hero-top {
   display: flex;
