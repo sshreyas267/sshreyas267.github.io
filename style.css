@@ -37,7 +37,7 @@ nav .links { display: flex; gap: 2px; font-size: 13px; }
 nav .links a {
   padding: 6px 14px;
   border-radius: 6px;
-  color: #666;
+  color: #111;
   transition: color 0.15s, background 0.15s;
   font-weight: 500;
 }
@@ -115,21 +115,21 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
   margin-bottom: 14px;
 }
 .hero .subtitle {
-  font-size: 18px; color: #555;
+  font-size: 18px; color: #111;
   line-height: 1.6; max-width: 520px;
   margin-bottom: 28px;
 }
 .hero .meta {
   display: flex; gap: 20px; flex-wrap: wrap;
-  font-size: 13px; color: #888;
+  font-size: 13px; color: #222;
   align-items: center;
 }
 .hero .meta a {
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: #ccc;
+  text-decoration-color: #555;
 }
-.hero .meta a:hover { opacity: 1; text-decoration-color: #888; }
+.hero .meta a:hover { opacity: 1; text-decoration-color: #222; }
 
 /* Page sections — show/hide */
 .page-section { display: none; }
@@ -147,7 +147,7 @@ h2 {
 /* Hero pills */
 .hero-pill {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: 12px; font-weight: 500; color: #555;
+  font-size: 12px; font-weight: 500; color: #111;
   background: #f1f5f9; border: 1px solid #e2e8f0;
   padding: 5px 13px; border-radius: 100px;
 }
@@ -158,7 +158,7 @@ h2 {
 
 /* About */
 .about-body { display: flex; flex-direction: column; gap: 14px; }
-.about-body p { font-size: 16px; color: #333; line-height: 1.8; }
+.about-body p { font-size: 16px; color: #111; line-height: 1.8; }
 .about-pullquote {
   font-size: 16px; font-weight: 500; color: #1e293b;
   border-left: 3px solid #2563EB;
@@ -200,7 +200,7 @@ h2 {
 }
 .case-card:hover::before { opacity: 1; }
 .case-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-.case-card p { font-size: 14px; color: #666; line-height: 1.65; margin-bottom: 16px; }
+.case-card p { font-size: 14px; color: #111; line-height: 1.65; margin-bottom: 16px; }
 .case-card .arrow {
   font-size: 13px; color: #2563EB;
   float: right; margin-top: -28px;
@@ -215,8 +215,8 @@ h2 {
 /* Experience */
 .exp-list { display: flex; flex-direction: column; gap: 40px; }
 .exp-item h3 { font-size: 15px; font-weight: 600; }
-.exp-item .meta { font-size: 12px; color: #999; margin: 3px 0 14px; }
-.exp-item .context { font-size: 13px; color: #888; margin-bottom: 12px; font-style: italic; }
+.exp-item .meta { font-size: 12px; color: #333; margin: 3px 0 14px; }
+.exp-item .context { font-size: 13px; color: #222; margin-bottom: 12px; font-style: italic; }
 .exp-item ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .exp-item li {
   font-size: 14px; color: #444;
@@ -229,7 +229,7 @@ h2 {
 .skills-group h3 {
   font-size: 13px; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: #94a3b8; margin-bottom: 12px;
+  color: #333; margin-bottom: 12px;
 }
 .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-pill {
@@ -244,20 +244,20 @@ h2 {
 /* Education */
 .edu-list { display: flex; flex-direction: column; gap: 28px; }
 .edu-item h3 { font-size: 15px; font-weight: 600; }
-.edu-item .meta { font-size: 12px; color: #999; margin: 3px 0 6px; }
-.edu-item p { font-size: 13px; color: #777; }
+.edu-item .meta { font-size: 12px; color: #333; margin: 3px 0 6px; }
+.edu-item p { font-size: 13px; color: #222; }
 
 /* Awards */
 .award-list { display: flex; flex-direction: column; gap: 28px; }
 .award-item h3 { font-size: 15px; font-weight: 600; }
-.award-item .meta { font-size: 12px; color: #999; margin: 3px 0 8px; }
-.award-item p { font-size: 14px; color: #555; line-height: 1.65; }
+.award-item .meta { font-size: 12px; color: #333; margin: 3px 0 8px; }
+.award-item p { font-size: 14px; color: #111; line-height: 1.65; }
 
 /* Contact */
 .contact-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
 .contact-item {
   display: flex; align-items: center; gap: 14px;
-  font-size: 15px; color: #333;
+  font-size: 15px; color: #111;
   text-decoration: none;
   transition: color 0.15s;
 }
@@ -265,10 +265,10 @@ h2 {
 .contact-icon { font-size: 20px; width: 28px; text-align: center; }
 
 /* Hero location */
-.hero-location { font-size: 16px; color: #555; font-weight: 500; }
+.hero-location { font-size: 16px; color: #111; font-weight: 500; }
 
 /* Resume */
-.resume-section p { font-size: 15px; color: #555; line-height: 1.7; max-width: 480px; margin-bottom: 20px; }
+.resume-section p { font-size: 15px; color: #111; line-height: 1.7; max-width: 480px; margin-bottom: 20px; }
 .resume-btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 11px 22px;
@@ -298,15 +298,15 @@ h2 {
 .info-card-main { display: flex; flex-direction: column; gap: 2px; flex: 1; }
 .info-card-title { font-size: 15px; font-weight: 600; color: #111; }
 .info-card-org { font-size: 13px; color: #2563EB; font-weight: 500; }
-.info-card-meta { font-size: 12px; color: #999; margin-top: 2px; }
-.info-card-courses { font-size: 11px; color: #bbb; margin-top: 5px; letter-spacing: 0.01em; }
-.info-card-courses-label { font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 6px; }
+.info-card-meta { font-size: 12px; color: #333; margin-top: 2px; }
+.info-card-courses { font-size: 11px; color: #555; margin-top: 5px; letter-spacing: 0.01em; }
+.info-card-courses-label { font-weight: 600; color: #444; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 6px; }
 .info-card--static { cursor: default; }
 .info-card--static:hover { border-color: #e8e8e8; box-shadow: none; }
 .info-card-logo { height: 36px; width: auto; object-fit: contain; flex-shrink: 0; opacity: 0.75; }
 img.info-card-logo[src="uw-logo.svg"] { height: 52px; }
 .info-card-logo-inline { width: 52px; height: 52px; object-fit: contain; border-radius: 8px; flex-shrink: 0; margin-left: 12px; opacity: 0.85; }
-.info-card-chevron { font-size: 11px; color: #bbb; flex-shrink: 0; transition: transform 0.2s, color 0.15s; }
+.info-card-chevron { font-size: 11px; color: #555; flex-shrink: 0; transition: transform 0.2s, color 0.15s; }
 .info-card:hover .info-card-chevron { color: #2563EB; }
 .info-card.open .info-card-chevron { transform: rotate(180deg); color: #2563EB; }
 .info-card-body {
@@ -319,7 +319,7 @@ img.info-card-logo[src="uw-logo.svg"] { height: 52px; }
 .info-card-body li { font-size: 14px; color: #444; line-height: 1.65; padding-left: 16px; position: relative; }
 .info-card-body li::before { content: "–"; position: absolute; left: 0; color: #93c5fd; }
 .info-card-body p { font-size: 14px; color: #444; line-height: 1.7; margin-top: 14px; }
-.info-card-context { font-size: 13px; color: #888; font-style: italic; margin-top: 14px; margin-bottom: -4px; }
+.info-card-context { font-size: 13px; color: #222; font-style: italic; margin-top: 14px; margin-bottom: -4px; }
 .exp-stats {
   display: flex; gap: 24px; flex-wrap: wrap;
   margin: 16px 0 4px;
@@ -330,14 +330,14 @@ img.info-card-logo[src="uw-logo.svg"] { height: 52px; }
 }
 .exp-stat { display: flex; flex-direction: column; gap: 2px; }
 .exp-stat-number { font-size: 20px; font-weight: 700; color: #2563EB; letter-spacing: -0.5px; line-height: 1; }
-.exp-stat-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+.exp-stat-label { font-size: 11px; color: #333; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
 .info-card-subheading { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2563EB; margin-top: 14px; }
 
 /* Footer */
 footer {
   padding: 40px 0;
   text-align: center;
-  font-size: 12px; color: #ccc;
+  font-size: 12px; color: #555;
 }
 
 /* Responsive */
@@ -386,14 +386,14 @@ footer {
 }
 .modal-close {
   background: none; border: none; cursor: pointer;
-  font-size: 22px; color: #aaa; padding: 0; line-height: 1;
+  font-size: 22px; color: #444; padding: 0; line-height: 1;
   flex-shrink: 0; margin-top: 2px;
   transition: color 0.15s;
 }
 .modal-close:hover { color: #111; }
 .modal-summary {
   padding: 12px 32px 0;
-  font-size: 14px; color: #777; line-height: 1.65;
+  font-size: 14px; color: #222; line-height: 1.65;
   font-style: italic;
 }
 .modal-tags {
@@ -410,7 +410,7 @@ footer {
   color: #2563EB; margin-bottom: 14px;
 }
 .modal-section p {
-  font-size: 14px; color: #333; line-height: 1.75;
+  font-size: 14px; color: #111; line-height: 1.75;
   margin-bottom: 10px;
 }
 .modal-section p:last-child { margin-bottom: 0; }
@@ -427,7 +427,7 @@ footer {
   border-left: 3px solid #bfdbfe;
   padding: 10px 16px;
   margin: 14px 0 0;
-  font-size: 13px; color: #666; font-style: italic; line-height: 1.7;
+  font-size: 13px; color: #111; font-style: italic; line-height: 1.7;
   background: #f8fbff;
 }
 .modal-section strong { color: #111; }
