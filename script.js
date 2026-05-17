@@ -137,7 +137,7 @@ function renderBlock(block) {
 
 const CARD_COVERS = {
   browser: { type: 'image', src: 'focusvault-banner.png', imgStyle: 'object-fit:cover;' },
-  spotify: { type: 'color', bg: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%)', src: 'spotify-logo.png', imgStyle: 'object-fit:contain;padding:52px;opacity:0.15;' },
+  spotify: { type: 'color', bg: '#121212', src: 'spotify-logo.png', imgStyle: 'object-fit:contain;padding:40px;' },
   notion:  { type: 'color', bg: '#191919', src: 'notion-logo.png',  imgStyle: 'object-fit:contain;padding:44px;' },
 };
 
