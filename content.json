@@ -60,11 +60,11 @@
           "content": [
             {
               "type": "p",
-              "text": "Spotify's recommendation engine is a feedback loop anchored to listening history, structurally favoring popular content. The algorithm shifted further toward familiarity in 2025 — Autoplay, the AI DJ, and Song Radio now recycle tracks users already know."
+              "text": "Spotify's recommendation engine is a feedback loop anchored to listening history, structurally favoring popular content. The algorithm shifted further toward familiarity in 2025 Autoplay, the AI DJ, and Song Radio now recycle tracks users already know."
             },
             {
               "type": "blockquote",
-              "text": "Only 27% of users agree that streaming services help them discover music outside familiar territory. 42% actively disagree — representing hundreds of millions of users whose primary discovery need is structurally unmet."
+              "text": "Only 27% of users agree that streaming services help them discover music outside familiar territory. 42% actively disagree representing hundreds of millions of users whose primary discovery need is structurally unmet."
             }
           ]
         },
@@ -73,14 +73,14 @@
           "content": [
             {
               "type": "p",
-              "text": "Discover Music: a new tile on the Spotify home screen where users describe the music they want in natural language. Spotify generates a playlist from the full catalogue — not just listening history — powered by a <strong>community music intelligence layer</strong> built from genre-specific listener communities."
+              "text": "Discover Music: a new tile on the Spotify home screen where users describe the music they want in natural language. Spotify generates a playlist from the full catalogue not just listening history powered by a <strong>community music intelligence layer</strong> built from genre-specific listener communities."
             },
             {
               "type": "ul",
               "items": [
                 "<strong>Text input:</strong> written descriptions anchor output to specific intent, unlike the AI DJ's conversational persona",
                 "<strong>Full track playback:</strong> serves the job of finding music to save and return to",
-                "<strong>History-off mode:</strong> listening history ignored entirely — the DJ cannot offer this"
+                "<strong>History-off mode:</strong> listening history ignored entirely the DJ cannot offer this"
               ]
             },
             {
@@ -106,7 +106,7 @@
         "Roadmap"
       ],
       "notionUrl": "",
-      "summary": "Notion has a retention problem its headline numbers obscure. 100M users, 4M paying — a ~4% conversion rate against a 5–8% best-in-class benchmark. The gap is not a pricing problem. It is an activation problem. Guided Mode is a user-triggered AI assistant built as a free tier of Notion AI, designed to bring middle users to the product's value without touching the power user experience.",
+      "summary": "Notion has a retention problem its headline numbers obscure. 100M users, 4M paying, a ~4% conversion rate against a 5-8% best-in-class benchmark. The gap is not a pricing problem. It is an activation problem. Guided Mode is a user-triggered AI assistant built as a free tier of Notion AI, designed to bring middle users to the product's value without touching the power user experience.",
       "sections": [
         {
           "heading": "The Problem",
@@ -117,7 +117,7 @@
             },
             {
               "type": "blockquote",
-              "text": "The middle user wants a tool that is collaborative enough for group work and capable enough for personal writing, without requiring significant time to configure. This user exists in large numbers inside Notion's own user base — they signed up, but they have never seen the product work for them."
+              "text": "The middle user wants a tool that is collaborative enough for group work and capable enough for personal writing, without requiring significant time to configure. This user exists in large numbers inside Notion's own user base they signed up, but they have never seen the product work for them."
             }
           ]
         },
@@ -131,7 +131,7 @@
             {
               "type": "ul",
               "items": [
-                "<strong>User-triggered only:</strong> the guide never activates unless a user asks — Notion's data never conflates guided users with successful users",
+                "<strong>User-triggered only:</strong> the guide never activates unless a user asks Notion's data never conflates guided users with successful users",
                 "<strong>Toggle on/off:</strong> power users can disable it permanently; middle users keep it on; two user types, one product surface",
                 "<strong>Free tier of Notion AI:</strong> paywalling the guide would charge users for the solution to a problem Notion created"
               ]

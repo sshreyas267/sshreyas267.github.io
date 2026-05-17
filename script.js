@@ -137,13 +137,13 @@ function renderBlock(block) {
 
 const CARD_COVERS = {
   browser: { type: 'image', src: 'focusvault-banner.png', imgStyle: 'object-fit:cover;' },
-  spotify: { type: 'color', bg: '#1DB954', src: 'spotify-logo.png', imgStyle: 'object-fit:contain;padding:36px;' },
+  spotify: { type: 'color', bg: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%)', src: 'spotify-logo.png', imgStyle: 'object-fit:contain;padding:52px;opacity:0.15;' },
   notion:  { type: 'color', bg: '#191919', src: 'notion-logo.png',  imgStyle: 'object-fit:contain;padding:44px;' },
 };
 
 function renderCaseCard(cs) {
   const cover = CARD_COVERS[cs.id] || { type: 'color', bg: '#1e3a8a' };
-  const coverStyle = cover.bg ? `background:${cover.bg}` : '';
+  const coverStyle = cover.bg ? `background:${cover.bg};background-size:cover;` : '';
   const imgTag = cover.src
     ? `<img src="${cover.src}" alt="${cs.title}" style="position:absolute;inset:0;width:100%;height:100%;${cover.imgStyle}">`
     : '';
