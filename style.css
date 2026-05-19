@@ -375,7 +375,7 @@ h2 {
 /* Contact — Split Layout */
 .contact-split { display: flex; gap: 60px; align-items: flex-start; }
 .contact-split-left { flex: 1; }
-.contact-headline { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; }
+.contact-headline { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; text-transform: none; color: #111; }
 .contact-blurb { font-size: 14px; color: #555; line-height: 1.65; margin-bottom: 24px; max-width: 340px; }
 .contact-split-right { flex: 1; display: flex; flex-direction: column; gap: 12px; padding-top: 6px; }
 .contact-card {
