@@ -336,21 +336,28 @@ h2 {
 .edu-timeline-courses-label { font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #888; margin-right: 6px; }
 
 /* Skills */
-.skills-groups { display: flex; flex-direction: column; gap: 28px; }
-.skills-group h3 {
-  font-size: 15px; font-weight: 700;
+.skills-icon-groups { display: flex; flex-direction: column; gap: 28px; }
+.skills-icon-group {}
+.skills-icon-label {
+  font-size: 11px; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: #333; margin-bottom: 12px;
+  color: #64748b; margin-bottom: 12px;
+  padding-bottom: 8px; border-bottom: 1px solid #f1f5f9;
 }
-.skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 15px; padding: 5px 13px;
-  border: 1px solid #e2e8f0;
-  border-radius: 100px; color: #475569;
-  background: #f8fafc;
+.skills-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 4px;
+  margin-top: 8px;
 }
-.skill-pill i { font-size: 12px; line-height: 1; }
+.skill-item {
+  display: flex; align-items: center; gap: 9px;
+  padding: 8px 10px; border-radius: 8px;
+  font-size: 13px; font-weight: 500; color: #222;
+  transition: background 0.15s;
+}
+.skill-item:hover { background: #f0f6ff; }
+.skill-item i { font-size: 15px; width: 18px; text-align: center; flex-shrink: 0; }
 
 /* Education */
 .edu-list { display: flex; flex-direction: column; gap: 28px; }
