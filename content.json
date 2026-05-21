@@ -93,6 +93,60 @@
       "embedUrl": "https://docs.google.com/presentation/d/e/2PACX-1vQJKqseWtf6UwGy0KJ3FRbOXsZouqTj7wtgNUnnmLZ3HktoOYNyM974NI_4cujQOw/pubembed?start=false&loop=false&delayms=5000"
     },
     {
+      "id": "goodreads",
+      "emoji": "📚",
+      "title": "Goodreads: Rediscovering Discovery",
+      "cardSummary": "A product improvement recommendation for Goodreads: four interlocking components to fix broken discovery and untrustworthy reviews, feeding directly into Amazon's $28B book revenue.",
+      "tags": [
+        "Product Improvement",
+        "User Research",
+        "Competitive Analysis",
+        "PRD Writing",
+        "Business Case",
+        "Metrics"
+      ],
+      "notionUrl": "",
+      "summary": "Amazon bought Goodreads in 2013 and abandoned it. 180 million members, only 3.4% actively engaged, and no meaningful product updates in over a decade. The problem is not a lack of resources. Amazon already owns the Kindle data, the purchase ecosystem, and the community. A better Goodreads is not a product investment. It is a revenue protection play for a $28 billion book business.",
+      "sections": [
+        {
+          "heading": "The Problem",
+          "content": [
+            {
+              "type": "p",
+              "text": "Goodreads has two structural failures: users cannot find books that match their taste, and they cannot trust the reviews they see. A five-star rating system with no nuance, recommendations based on popularity rather than taste, review bombing with no moderation, and a Kindle integration gap between two Amazon products that barely talk to each other."
+            },
+            {
+              "type": "blockquote",
+              "text": "180 million registered members. Only 3.4% are actively engaged. StoryGraph, a direct competitor, saw 25,000 sign-ups in a single day from users who had given up on Goodreads."
+            }
+          ]
+        },
+        {
+          "heading": "The Recommendation",
+          "content": [
+            {
+              "type": "p",
+              "text": "Four interlocking components targeting both problems simultaneously. The first two fix discovery. The second two fix trust."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "<strong>Redesigned Onboarding:</strong> a 5-question preference quiz at signup, genre-weighted highest, with a lighter flow for returning readers",
+                "<strong>Weighted Recommendation Engine:</strong> genre as the primary filter, taste signals ranking results within the filtered pool, learning continuously without new forms",
+                "<strong>Kindle Integration:</strong> already-read books excluded automatically, completion pace as engagement signal, abandoned books creating negative signals",
+                "<strong>Trustworthy Review System:</strong> multi-dimensional ratings, mandatory comments below 3 stars, timing-based spike detection, and Verified Reader badges weighted higher in public ratings"
+              ]
+            },
+            {
+              "type": "blockquote",
+              "text": "Amazon owns the data that could fix Goodreads. Kindle knows which books a user finished, how fast, and which were abandoned. No competitor can build this. Amazon already has it."
+            }
+          ]
+        }
+      ],
+      "embedUrl": "https://docs.google.com/presentation/d/e/2PACX-1vQoSj1jqEQDN3aMjMT5bWIxWFHjrgZK2dmmjGhAPCnH1xoGvvkFI8CUExmDXwQlnffqpobVFMK4erCt/pubembed?start=false&loop=false&delayms=5000"
+    },
+    {
       "id": "notion",
       "emoji": "📝",
       "title": "Notion: Guided Mode",
