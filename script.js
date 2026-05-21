@@ -73,11 +73,16 @@ document.querySelector('nav .name').addEventListener('click', () => {
 const sections = ['about', 'work', 'experience', 'skills', 'resume'];
 function updateActiveNav() {
   const scrollY = window.scrollY + 80;
+  const atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 10;
   let current = sections[0];
-  sections.forEach(id => {
-    const el = document.getElementById('section-' + id);
-    if (el && el.offsetTop <= scrollY) current = id;
-  });
+  if (atBottom) {
+    current = sections[sections.length - 1];
+  } else {
+    sections.forEach(id => {
+      const el = document.getElementById('section-' + id);
+      if (el && el.offsetTop <= scrollY) current = id;
+    });
+  }
   document.querySelectorAll('nav .links a').forEach(a => {
     a.classList.toggle('active', a.dataset.page === current);
   });
