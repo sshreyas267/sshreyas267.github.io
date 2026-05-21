@@ -59,7 +59,10 @@ document.querySelectorAll('nav .links a').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
     const target = document.getElementById('section-' + a.dataset.page);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    if (target) {
+      const top = target.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
   });
 });
 document.querySelector('nav .name').addEventListener('click', () => {
