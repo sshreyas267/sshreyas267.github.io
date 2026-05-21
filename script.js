@@ -54,23 +54,33 @@
   window.addEventListener('resize', () => { resize(); makeDots(); });
 })();
 
-// ── Page navigation ──────────────────────────────────────────────
-function showPage(name) {
-  document.querySelectorAll('.page-section').forEach(s => {
-    s.classList.remove('active', 'page-section-fade');
+// ── Page navigation (scrollable) ─────────────────────────────────
+document.querySelectorAll('nav .links a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.getElementById('section-' + a.dataset.page);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
-  const target = document.getElementById('section-' + name);
-  if (target) target.classList.add('active', 'page-section-fade');
+});
+document.querySelector('nav .name').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Highlight active nav link based on scroll position
+const sections = ['about', 'work', 'experience', 'skills', 'resume'];
+function updateActiveNav() {
+  const scrollY = window.scrollY + 80;
+  let current = sections[0];
+  sections.forEach(id => {
+    const el = document.getElementById('section-' + id);
+    if (el && el.offsetTop <= scrollY) current = id;
+  });
   document.querySelectorAll('nav .links a').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === name);
+    a.classList.toggle('active', a.dataset.page === current);
   });
 }
-
-document.querySelectorAll('nav .links a').forEach(a => {
-  a.addEventListener('click', e => { e.preventDefault(); showPage(a.dataset.page); });
-});
-document.querySelector('nav .name').addEventListener('click', () => showPage('about'));
-showPage('about');
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
 
 // ── Footer date ──────────────────────────────────────────────────
 const d = new Date();

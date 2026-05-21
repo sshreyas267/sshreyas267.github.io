@@ -153,8 +153,7 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
 .hero .meta a:hover { opacity: 1; text-decoration-color: #222; }
 
 /* Page sections — show/hide */
-.page-section { display: none; }
-.page-section.active { display: block; }
+.page-section { display: block; }
 .page-section-fade { animation: fadeIn 0.2s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
