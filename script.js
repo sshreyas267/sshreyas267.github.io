@@ -206,14 +206,15 @@ function renderModal(cs) {
       <p class="modal-summary">${cs.summary}</p>
       <div class="modal-tags">${cs.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
       <div class="modal-body">${body}${embed}</div>
-      <div class="modal-footer">${cs.notionUrl
-        ? `<a class="modal-notion-link" href="${cs.notionUrl}" target="_blank">View on Notion ↗</a>`
-        : ''}</div>
+      <div class="modal-footer">
+        ${cs.notionUrl ? `<a class="modal-notion-link" href="${cs.notionUrl}" target="_blank">View on Notion ↗</a>` : ''}
+        ${cs.chromeUrl ? `<a class="modal-notion-link" href="${cs.chromeUrl}" target="_blank">View on Chrome Web Store ↗</a>` : ''}
+      </div>
     </div>
   </div>`;
 }
 
-fetch('content.json?v=5')
+fetch('content.json?v=6')
   .then(r => r.json())
   .then(data => {
     document.querySelector('.case-studies').innerHTML =
