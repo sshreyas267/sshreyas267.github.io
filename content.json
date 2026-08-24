@@ -199,6 +199,70 @@
         }
       ],
       "embedUrl": "https://docs.google.com/presentation/d/e/2PACX-1vSwY8liQ_kb-aZ3GS0502gwsHw1ES9-pXjiREgb5hIM5J9qyPcV9W7OJ66ajP8rhs34zEz1DnNzX5sg/pubembed?start=false&loop=false&delayms=5000"
+    },
+    {
+      "id": "roadstatus",
+      "emoji": "🚦",
+      "title": "Predictive Road-Status Detection",
+      "cardSummary": "A product spec turning the gap in Google Maps' diversion reporting into a civic-infrastructure signal: detecting closures and diversions from aggregate travel-time data instead of waiting for citizen reports.",
+      "tags": [
+        "Product Spec",
+        "Data Architecture",
+        "Civic Tech",
+        "Business Case"
+      ],
+      "notionUrl": "",
+      "summary": "Regular commuters know their routes well enough that they rarely open a navigation app, so the people most likely to encounter a new diversion are exactly those least likely to be generating data about it. This spec proposes a two-source detection system, passive travel-time inference plus a municipal data partnership, that infers road diversions and closures without requiring any citizen reporting, and reframes the output as a general civic-infrastructure signal product rather than a single Maps feature.",
+      "sections": [
+        {
+          "heading": "The Problem",
+          "content": [
+            {
+              "type": "p",
+              "text": "Regular commuters know their routes well enough that they rarely open a navigation app. The people most likely to encounter a new diversion are exactly those least likely to be generating data about it, a structural blind spot that costs India's top four cities an estimated $22B a year in peak-hour traffic delay."
+            },
+            {
+              "type": "blockquote",
+              "text": "A USDOT-backed study comparing Waze's crowdsourced incident reports against official state-agency logs found that only 4% of reports for local-road disabled vehicles ever reached a DOT log, versus ~40% on highways. The gap is largest on exactly the kind of familiar, local roads this spec targets."
+            }
+          ]
+        },
+        {
+          "heading": "The Solution",
+          "content": [
+            {
+              "type": "p",
+              "text": "Two sources covering each other's blind spot. No citizen reporting required at any point."
+            },
+            {
+              "type": "ul",
+              "items": [
+                "<strong>Passive inference:</strong> watches aggregate travel-time patterns over a few days to catch diversions that build up naturally. Blind spot: day one, before any history exists to compare against.",
+                "<strong>Municipal data partnership:</strong> a direct feed from traffic police on planned closures and construction, ahead of time. Blind spot: coverage, since it's only as good as the partnership.",
+                "<strong>Combined system:</strong> passive inference carries day-to-day coverage, the municipal feed closes the day-one gap for planned work."
+              ]
+            },
+            {
+              "type": "blockquote",
+              "text": "Not every anomaly is a diversion; an accident or a broken-down truck produces the same traffic-pattern anomaly as a real diversion. The classification rule is the decay curve, not the anomaly alone: an incident drops back to baseline within a day, a diversion stays flat or gets worse past that window."
+            }
+          ]
+        },
+        {
+          "heading": "From Feature to Product",
+          "content": [
+            {
+              "type": "p",
+              "text": "Strip out the navigation UI and this is a general \"what changed on this road\" signal, applicable to waterlogging, a fallen tree, or a burst pipe, none of which get reliably reported either, for the same structural reason diversions don't."
+            },
+            {
+              "type": "blockquote",
+              "text": "In a single event in November 2025, 57 localities across Chennai reported waterlogging and roughly 400 MTC buses, about a third of the fleet, were grounded. The reframe: not a Maps feature, but a real-time civic issue feed sold to municipal traffic and disaster-response departments as inferred-incident data, with navigation apps as just one distribution channel."
+            }
+          ]
+        }
+      ],
+      "embedUrl": "https://docs.google.com/presentation/d/e/2PACX-1vRyfvO96t_NTr5KvSEbOLJ4YZE7coVRu_0TEFMove0CCSk5LMhBQe4d2tlq4GpnABSmqgl_L_MQCNy4/pubembed?start=false&loop=false&delayms=5000"
     }
   ]
 }
