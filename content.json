@@ -204,7 +204,7 @@
       "id": "roadstatus",
       "emoji": "🚦",
       "title": "Predictive Road-Status Detection",
-      "cardSummary": "A product spec turning Google Maps' diversion-reporting gap into a civic-infrastructure signal, detecting closures from aggregate travel-time data instead of citizen reports.",
+      "cardSummary": "Inferring road closures from travel-time data instead of citizen reports, reframed as a civic-infrastructure signal.",
       "tags": [
         "Product Spec",
         "Data Architecture",
@@ -223,7 +223,7 @@
             },
             {
               "type": "blockquote",
-              "text": "A USDOT-backed study comparing Waze's crowdsourced incident reports against official state-agency logs found that only 4% of reports for local-road disabled vehicles ever reached a DOT log, versus ~40% on highways. The gap is largest on exactly the kind of familiar, local roads this spec targets."
+              "text": "A USDOT-backed study matched Waze's crowdsourced incident reports against official state-agency logs. Match rates held around 40% on highways, but fell to just 4% on local roads, the exact reporting gap this spec targets."
             }
           ]
         },
