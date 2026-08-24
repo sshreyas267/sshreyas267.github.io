@@ -158,7 +158,7 @@ const CARD_COVERS = {
   spotify:    { type: 'color', bg: '#121212', src: 'spotify-logo.png', imgStyle: 'object-fit:contain;padding:40px;' },
   goodreads:  { type: 'color', bg: '#3B1F0E', src: 'goodreads-logo.svg', imgStyle: 'object-fit:contain;padding:44px;' },
   notion:     { type: 'color', bg: '#191919', src: 'notion-logo.png',  imgStyle: 'object-fit:contain;padding:44px;' },
-  roadstatus: { type: 'color', bg: '#12100f' },
+  roadstatus: { type: 'color', bg: '#12100f', src: 'googlemaps-logo.svg', imgStyle: 'object-fit:contain;padding:48px;' },
 };
 
 function renderCaseCard(cs) {
