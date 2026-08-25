@@ -183,8 +183,33 @@ h2 {
 
 /* About */
 #about { padding-top: 8px; }
+.about-split { display: flex; gap: 60px; align-items: flex-start; }
+.about-split-left { flex: 1.4; }
 .about-body { display: flex; flex-direction: column; gap: 14px; }
 .about-body p { font-size: 19px; color: #111; line-height: 1.8; }
+.about-split-right {
+  flex: 1; display: flex; flex-direction: column; gap: 10px;
+  padding: 20px; padding-top: 16px;
+  background: #fff; border-radius: 16px;
+  border: 1.5px solid #e2e8f0;
+}
+.about-facts-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #94a3b8;
+  margin-bottom: 4px;
+}
+.about-fact {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 15px; font-weight: 500; color: #111;
+  padding: 6px 0;
+}
+.about-fact + .about-fact { border-top: 1px solid #f1f5f9; }
+.about-fact-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
+.about-fact-label {
+  display: block; font-size: 11px; color: #94a3b8;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
 .about-pullquote {
   font-size: 15px; font-weight: 500; color: #1e293b;
   border-left: 3px solid #2563EB;
@@ -495,6 +520,8 @@ footer {
   section { padding: 40px 0; }
   nav .links { gap: 0; }
   nav .links a { padding: 6px 10px; font-size: 12px; }
+  .about-split { flex-direction: column; gap: 24px; }
+  .about-split-right { width: 100%; }
 }
 
 /* Modal */
