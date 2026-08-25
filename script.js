@@ -90,6 +90,27 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav, { passive: true });
 updateActiveNav();
 
+// ── Fit hero tagline to divider width, single line ─────────────────
+function fitTagline() {
+  const el = document.querySelector('.hero-tagline');
+  const divider = document.querySelector('.hero-editorial-divider');
+  if (!el || !divider) return;
+  if (window.innerWidth <= 580) { el.style.fontSize = ''; return; }
+
+  const target = divider.clientWidth;
+  let lo = 16, hi = 56;
+  for (let i = 0; i < 18; i++) {
+    const mid = (lo + hi) / 2;
+    el.style.fontSize = mid + 'px';
+    if (el.scrollWidth > target) hi = mid; else lo = mid;
+  }
+  el.style.fontSize = lo + 'px';
+}
+window.addEventListener('resize', fitTagline);
+window.addEventListener('load', fitTagline);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTagline);
+fitTagline();
+
 // ── Footer date ──────────────────────────────────────────────────
 const d = new Date();
 document.getElementById('footer-date').textContent =

@@ -72,12 +72,13 @@ nav .links a.active { color: #2563EB; background: #EFF6FF; }
   margin: 16px 0 20px;
 }
 .hero-tagline {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.5px;
   color: #2563EB;
   text-align: center;
+  white-space: nowrap;
 }
 
 
@@ -522,6 +523,7 @@ footer {
   nav .links a { padding: 6px 10px; font-size: 12px; }
   .about-split { flex-direction: column; gap: 24px; }
   .about-split-right { width: 100%; }
+  .hero-tagline { white-space: normal; font-size: 20px !important; }
 }
 
 /* Modal */
