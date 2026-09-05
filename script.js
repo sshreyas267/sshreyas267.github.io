@@ -1,226 +1,235 @@
-// ── Particle background ───────────────────────────────────────────
+/* ==========================================================================
+   Shreyas Subramanian — Product Portfolio
+   Vanilla JS. Responsibilities, in order:
+     1. Progressive-enhancement flag + footer date
+     2. Photo lightbox
+     3. Scroll reveal (IntersectionObserver)
+     4. Active nav state
+     5. Projects: render cards from content.json + hash-routed detail view
+   ========================================================================== */
+
 (function () {
-  const canvas = document.getElementById('bg-particles');
-  const ctx = canvas.getContext('2d');
-  let W, H, dots;
+  'use strict';
 
-  function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
+  // 1. Flag JS availability (CSS uses .js to gate reveal animations) + footer date
+  document.documentElement.classList.add('js');
+
+  var now = new Date();
+  var footerDate = document.getElementById('footer-date');
+  if (footerDate) {
+    footerDate.textContent = now.toLocaleString('default', { month: 'long' }) + ' ' + now.getFullYear();
   }
 
-  function makeDots() {
-    dots = Array.from({ length: 70 }, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      r: Math.random() * 2 + 1
-    }));
-  }
+  // 2. Photo lightbox
+  var lightbox = document.getElementById('photo-lightbox');
+  var photoOpen = document.getElementById('photo-open');
 
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    dots.forEach(d => {
-      d.x += d.vx; d.y += d.vy;
-      if (d.x < 0 || d.x > W) d.vx *= -1;
-      if (d.y < 0 || d.y > H) d.vy *= -1;
-      ctx.beginPath();
-      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(96,165,250,0.7)';
-      ctx.fill();
+  function openPhoto() {
+    if (!lightbox) return;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closePhoto() {
+    if (!lightbox || lightbox.hidden) return;
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+  }
+  if (photoOpen) photoOpen.addEventListener('click', openPhoto);
+  if (lightbox) lightbox.addEventListener('click', closePhoto);
+
+  // 3. Scroll reveal
+  var reveal = 'IntersectionObserver' in window
+    ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            reveal.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 })
+    : null;
+
+  function observeReveals(root) {
+    var nodes = (root || document).querySelectorAll('.reveal:not(.is-visible)');
+    nodes.forEach(function (el) {
+      if (reveal) reveal.observe(el);
+      else el.classList.add('is-visible');
     });
-    for (let i = 0; i < dots.length; i++) {
-      for (let j = i + 1; j < dots.length; j++) {
-        const dx = dots[i].x - dots[j].x;
-        const dy = dots[i].y - dots[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          ctx.beginPath();
-          ctx.moveTo(dots[i].x, dots[i].y);
-          ctx.lineTo(dots[j].x, dots[j].y);
-          ctx.strokeStyle = `rgba(147,197,253,${0.6 * (1 - dist / 120)})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
+  }
+  observeReveals();
+
+  // 4. Active nav state
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.site-nav a'));
+  var sectionIds = navLinks.map(function (a) { return a.getAttribute('href').slice(1); });
+  var headerH = 64;
+
+  function updateNav() {
+    var y = window.scrollY + headerH + 40;
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
+    var current = sectionIds[0];
+
+    if (atBottom) {
+      current = sectionIds[sectionIds.length - 1];
+    } else {
+      sectionIds.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && el.offsetTop <= y) current = id;
+      });
+    }
+    navLinks.forEach(function (a) {
+      a.classList.toggle('is-active', a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  window.addEventListener('resize', updateNav);
+  updateNav();
+
+  // 5. Projects
+  var CARD_COVERS = {
+    browser:    { bg: '#0a0a1a', src: 'focusvault-icon.svg',  imgStyle: 'object-fit:contain;padding:28px;' },
+    spotify:    { bg: '#121212', src: 'spotify-logo.png',     imgStyle: 'object-fit:contain;padding:40px;' },
+    goodreads:  { bg: '#3B1F0E', src: 'goodreads-logo.svg',   imgStyle: 'object-fit:contain;padding:44px;' },
+    notion:     { bg: '#191919', src: 'notion-logo.png',      imgStyle: 'object-fit:contain;padding:44px;' },
+    roadstatus: { bg: '#12100f', src: 'googlemaps-logo.svg',  imgStyle: 'object-fit:contain;padding:48px;' }
+  };
+
+  var grid = document.getElementById('project-grid');
+  var detail = document.getElementById('project-detail');
+  var caseStudies = [];
+
+  function renderBlock(block) {
+    switch (block.type) {
+      case 'p':
+        return '<p>' + block.text + '</p>';
+      case 'ul':
+        return '<ul>' + block.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul>';
+      case 'blockquote':
+        return '<blockquote>' + block.text + '</blockquote>';
+      case 'table':
+        return '<div class="table-wrap"><table class="detail-table">' +
+          '<thead><tr>' + block.headers.map(function (h) { return '<th>' + h + '</th>'; }).join('') + '</tr></thead>' +
+          '<tbody>' + block.rows.map(function (r) {
+            return '<tr>' + r.map(function (c) { return '<td>' + c + '</td>'; }).join('') + '</tr>';
+          }).join('') + '</tbody></table></div>';
+      default:
+        return '';
+    }
+  }
+
+  function renderTags(tags) {
+    return '<ul class="tags">' + tags.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>';
+  }
+
+  function renderCard(cs) {
+    var cover = CARD_COVERS[cs.id] || { bg: '#1B1A17' };
+    var img = cover.src
+      ? '<img src="' + cover.src + '" alt="" style="' + (cover.imgStyle || '') + '" loading="lazy">'
+      : '';
+    return '' +
+      '<button class="project-card reveal" type="button" data-project="' + cs.id + '">' +
+        '<div class="project-cover" style="background:' + cover.bg + '">' + img + '</div>' +
+        '<div class="project-body">' +
+          '<h3 class="project-title"><span>' + cs.title + '</span><span class="arrow" aria-hidden="true">↗</span></h3>' +
+          '<p class="project-summary">' + cs.cardSummary + '</p>' +
+          renderTags(cs.tags) +
+        '</div>' +
+      '</button>';
+  }
+
+  function renderDetail(cs) {
+    var sections = cs.sections.map(function (section) {
+      return '<h4 class="case-label">' + section.heading + '</h4>' +
+        section.content.map(renderBlock).join('');
+    }).join('');
+
+    var embed = cs.embedUrl
+      ? '<h4 class="case-label">Full Presentation</h4>' +
+        '<div class="embed-frame"><iframe src="' + cs.embedUrl + '" allowfullscreen loading="lazy" title="' + cs.title + ' presentation"></iframe></div>'
+      : '';
+
+    var links = '';
+    if (cs.notionUrl) links += '<a class="text-link" href="' + cs.notionUrl + '" target="_blank" rel="noopener">View on Notion ↗</a>';
+    if (cs.chromeUrl) links += '<a class="text-link" href="' + cs.chromeUrl + '" target="_blank" rel="noopener">View on Chrome Web Store ↗</a>';
+
+    return '' +
+      '<div class="detail-side">' +
+        '<button class="back" type="button" data-back>← All projects</button>' +
+        '<h3 class="detail-title">' + cs.title + '</h3>' +
+        '<p class="detail-summary">' + cs.summary + '</p>' +
+        renderTags(cs.tags) +
+        (links ? '<div class="detail-links">' + links + '</div>' : '') +
+      '</div>' +
+      '<div class="detail-body">' + sections + embed + '</div>';
+  }
+
+  function scrollToWork() {
+    var work = document.getElementById('work');
+    if (!work) return;
+    var top = work.getBoundingClientRect().top + window.scrollY - (headerH + 8);
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+
+  function showGrid() {
+    if (!detail || !grid) return;
+    detail.hidden = true;
+    detail.innerHTML = '';
+    grid.hidden = false;
+  }
+
+  function showProject(id) {
+    var cs = caseStudies.find(function (c) { return c.id === id; });
+    if (!cs || !detail || !grid) { showGrid(); return; }
+
+    grid.hidden = true;
+    detail.innerHTML = renderDetail(cs);
+    detail.hidden = false;
+    scrollToWork();
+
+    var back = detail.querySelector('[data-back]');
+    if (back) back.focus({ preventScroll: true });
+  }
+
+  function route() {
+    var match = location.hash.match(/^#project\/([\w-]+)$/);
+    if (match) {
+      showProject(match[1]);
+    } else if (detail && !detail.hidden) {
+      showGrid();
+      if (location.hash === '#work') scrollToWork();
+    }
+    updateNav();
+  }
+
+  if (grid) {
+    grid.addEventListener('click', function (e) {
+      var card = e.target.closest('[data-project]');
+      if (card) location.hash = 'project/' + card.getAttribute('data-project');
+    });
+  }
+  if (detail) {
+    detail.addEventListener('click', function (e) {
+      if (e.target.closest('[data-back]')) location.hash = 'work';
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (lightbox && !lightbox.hidden) { closePhoto(); return; }
+    if (detail && !detail.hidden) location.hash = 'work';
+  });
+
+  window.addEventListener('hashchange', route);
+
+  fetch('content.json?v=10')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      caseStudies = data.caseStudies || [];
+      if (grid) {
+        grid.innerHTML = caseStudies.map(renderCard).join('');
+        observeReveals(grid);
       }
-    }
-    requestAnimationFrame(draw);
-  }
+      route();
+    })
+    .catch(function (err) { console.error('Failed to load content.json:', err); });
 
-  resize();
-  makeDots();
-  draw();
-  window.addEventListener('resize', () => { resize(); makeDots(); });
 })();
-
-// ── Page navigation (scrollable) ─────────────────────────────────
-document.querySelectorAll('nav .links a').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.getElementById('section-' + a.dataset.page);
-    if (target) {
-      const top = target.getBoundingClientRect().top + window.scrollY - 64;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  });
-});
-document.querySelector('nav .name').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Highlight active nav link based on scroll position
-const sections = ['about', 'work', 'experience', 'skills', 'resume'];
-function updateActiveNav() {
-  const scrollY = window.scrollY + 80;
-  const atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 10;
-  let current = sections[0];
-  if (atBottom) {
-    current = sections[sections.length - 1];
-  } else {
-    sections.forEach(id => {
-      const el = document.getElementById('section-' + id);
-      if (el && el.offsetTop <= scrollY) current = id;
-    });
-  }
-  document.querySelectorAll('nav .links a').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === current);
-  });
-}
-window.addEventListener('scroll', updateActiveNav, { passive: true });
-updateActiveNav();
-
-// ── Footer date ──────────────────────────────────────────────────
-const d = new Date();
-document.getElementById('footer-date').textContent =
-  d.toLocaleString('default', { month: 'long' }) + ' ' + d.getFullYear();
-
-// ── Accordion (experience / education / awards) ──────────────────
-function toggleCard(card) { card.classList.toggle('open'); }
-
-// ── Photo lightbox ───────────────────────────────────────────────
-function openPhoto() {
-  document.getElementById('photo-lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closePhoto() {
-  document.getElementById('photo-lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// ── Modals ───────────────────────────────────────────────────────
-function openModal(id) {
-  const overlay = document.getElementById(id);
-  if (!overlay) return;
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  overlay.querySelector('.modal-close').focus();
-}
-function closeModal(id) {
-  const overlay = document.getElementById(id);
-  if (!overlay) return;
-  overlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// Use event delegation so dynamically-rendered modals are covered
-document.addEventListener('click', e => {
-  if (e.target.classList.contains('modal-overlay')) closeModal(e.target.id);
-});
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closePhoto();
-    document.querySelectorAll('.modal-overlay.open').forEach(o => closeModal(o.id));
-  }
-});
-
-// ── Content rendering ─────────────────────────────────────────────
-function renderBlock(block) {
-  switch (block.type) {
-    case 'p':
-      return `<p>${block.text}</p>`;
-    case 'ul':
-      return `<ul>${block.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
-    case 'blockquote':
-      return `<blockquote>${block.text}</blockquote>`;
-    case 'table':
-      return `<div class="modal-table-wrap"><table class="modal-table">
-        <thead><tr>${block.headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>
-        <tbody>${block.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
-      </table></div>`;
-    default:
-      return '';
-  }
-}
-
-const CARD_COVERS = {
-  browser:    { type: 'color', bg: '#0a0a1a', src: 'focusvault-icon.svg', imgStyle: 'object-fit:contain;padding:28px;' },
-  spotify:    { type: 'color', bg: '#121212', src: 'spotify-logo.png', imgStyle: 'object-fit:contain;padding:40px;' },
-  goodreads:  { type: 'color', bg: '#3B1F0E', src: 'goodreads-logo.svg', imgStyle: 'object-fit:contain;padding:44px;' },
-  notion:     { type: 'color', bg: '#191919', src: 'notion-logo.png',  imgStyle: 'object-fit:contain;padding:44px;' },
-  roadstatus: { type: 'color', bg: '#12100f', src: 'googlemaps-logo.svg', imgStyle: 'object-fit:contain;padding:48px;' },
-};
-
-function renderCaseCard(cs) {
-  const cover = CARD_COVERS[cs.id] || { type: 'color', bg: '#1e3a8a' };
-  const coverStyle = cover.bg ? `background:${cover.bg};background-size:cover;` : '';
-  const imgTag = cover.src
-    ? `<img src="${cover.src}" alt="${cs.title}" style="position:absolute;inset:0;width:100%;height:100%;${cover.imgStyle}">`
-    : '';
-  return `<button class="case-card" onclick="openModal('modal-${cs.id}')">
-    <div class="case-card-cover" style="${coverStyle}">
-      ${imgTag}
-      <div class="case-card-cover-overlay"></div>
-    </div>
-    <div class="case-card-body">
-      <h3>${cs.title}</h3>
-      <p>${cs.cardSummary}</p>
-      <div class="tags">${cs.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-      <span class="arrow">↗</span>
-    </div>
-  </button>`;
-}
-
-function renderModal(cs) {
-  const body = cs.sections.map((section, i) => `
-    ${i > 0 ? '<div class="modal-divider"></div>' : ''}
-    <div class="modal-section">
-      <h3>${section.heading}</h3>
-      ${section.content.map(renderBlock).join('')}
-    </div>`).join('');
-
-  const embed = cs.embedUrl ? `
-    <div class="modal-divider"></div>
-    <div class="modal-section">
-      <h3>Full Presentation</h3>
-      <div class="modal-embed-wrap">
-        <iframe src="${cs.embedUrl}" frameborder="0" allowfullscreen class="modal-embed"></iframe>
-      </div>
-    </div>` : '';
-
-  return `<div class="modal-overlay" id="modal-${cs.id}" role="dialog" aria-modal="true">
-    <div class="modal${cs.embedUrl ? ' modal--wide' : ''}">
-      <div class="modal-header">
-        <div class="modal-title">${cs.emoji} ${cs.title}</div>
-        <button class="modal-close" onclick="closeModal('modal-${cs.id}')" aria-label="Close">×</button>
-      </div>
-      <p class="modal-summary">${cs.summary}</p>
-      <div class="modal-tags">${cs.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-      <div class="modal-body">${body}${embed}</div>
-      <div class="modal-footer">
-        ${cs.notionUrl ? `<a class="modal-notion-link" href="${cs.notionUrl}" target="_blank">View on Notion ↗</a>` : ''}
-        ${cs.chromeUrl ? `<a class="modal-notion-link" href="${cs.chromeUrl}" target="_blank">View on Chrome Web Store ↗</a>` : ''}
-      </div>
-    </div>
-  </div>`;
-}
-
-fetch('content.json?v=10')
-  .then(r => r.json())
-  .then(data => {
-    document.querySelector('.case-studies').innerHTML =
-      data.caseStudies.map(renderCaseCard).join('');
-    document.getElementById('modals-container').innerHTML =
-      data.caseStudies.map(renderModal).join('');
-  })
-  .catch(err => console.error('Failed to load content.json:', err));
