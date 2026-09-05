@@ -215,7 +215,7 @@ function renderModal(cs) {
   </div>`;
 }
 
-fetch('content.json?v=8')
+fetch('content.json?v=9')
   .then(r => r.json())
   .then(data => {
     document.querySelector('.case-studies').innerHTML =

@@ -44,7 +44,7 @@
       "id": "spotify",
       "emoji": "🎵",
       "title": "Spotify: Discover Music",
-      "cardSummary": "A strategic recommendation to solve genuine music discovery for the niche listener segment using a two-layer data architecture: behavioral history plus a community music intelligence layer trained on genre-specific listener communities.",
+      "cardSummary": "A fifth discovery signal for Spotify, human judgment from genre communities, surfacing music no listening-history algorithm can find.",
       "tags": [
         "Competitive Analysis",
         "User Research",
@@ -97,7 +97,7 @@
       "id": "goodreads",
       "emoji": "📚",
       "title": "Goodreads: Rediscovering Discovery",
-      "cardSummary": "A product improvement recommendation for Goodreads: four interlocking components to fix broken discovery and untrustworthy reviews, feeding directly into Amazon's $28B book revenue.",
+      "cardSummary": "A plan to fix Goodreads' broken discovery and untrustworthy reviews using Kindle data Amazon already owns, protecting its $21.7B book business.",
       "tags": [
         "Product Improvement",
         "User Research",
@@ -151,7 +151,7 @@
       "id": "notion",
       "emoji": "📝",
       "title": "Notion: Guided Mode",
-      "cardSummary": "A feature recommendation to solve Notion's structural activation problem: 100M users, only 4M paying. Guided Mode is a reactive AI assistant that helps middle users find their footing without changing the power user experience at all.",
+      "cardSummary": "A free, user-triggered AI guide that solves Notion's activation problem for middle users without touching the power-user experience.",
       "tags": [
         "Competitive Analysis",
         "User Research",
